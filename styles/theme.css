@@ -1,0 +1,12 @@
+:root {
+  --bg: #f2ede2;
+  --bg-alt: #ece3d0;
+  --surface: #fbf8ef;
+  --text: #1a1a17;
+  --text-muted: #5a584f;
+  --text-subtle: #8a8579;
+  --accent: #8a2e2a;
+  --accent-hover: #6d2320;
+  --line: rgba(26, 26, 23, 0.14);
+  --line-strong: rgba(26, 26, 23, 0.28);
+}
