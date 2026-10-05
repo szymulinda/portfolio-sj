@@ -173,6 +173,92 @@ h2 em {
   }
 }
 
+.section-note {
+  font-family: var(--font-fraunces), ui-serif, serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+.section-note a {
+  color: var(--accent);
+  font-weight: 400;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.section-note a:hover {
+  color: var(--accent-hover);
+}
+
+.problem-prose {
+  max-width: 62ch;
+  margin-inline: auto;
+}
+
+.about-prose {
+  margin-inline: 0;
+}
+
+.problem-prose > .about-cta {
+  margin-top: 28px;
+}
+
+.about-more {
+  margin-top: 12px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.faq-followup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+  text-align: center;
+}
+
+.faq-followup p {
+  margin-bottom: 16px;
+  font-family: var(--font-fraunces), ui-serif, serif;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+.problem-prose > * + * {
+  margin-top: 20px;
+}
+
+.problem-copy {
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+.problem-turn {
+  margin-bottom: 8px;
+  font-family: var(--font-fraunces), ui-serif, serif;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 1.3;
+  color: var(--text);
+}
+
+.problem-prose > .problem-guarantee {
+  margin-top: 32px;
+  border-left: 3px solid var(--accent);
+  padding-left: 20px;
+  font-family: var(--font-fraunces), ui-serif, serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.45;
+  color: var(--text);
+  text-align: left;
+}
+
 .project-frame::after {
   content: "";
   position: absolute;

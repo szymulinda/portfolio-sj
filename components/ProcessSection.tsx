@@ -1,8 +1,7 @@
 import { fraunces } from "@/lib/fonts";
 import SectionShell from "@/components/SectionShell";
 import ProcessStep from "@/components/ProcessStep";
-import Button from "@/components/Button";
-import { process, processSteps, CALENDAR_URL } from "@/lib/content";
+import { process, processSteps } from "@/lib/content";
 
 export default function ProcessSection() {
   return (
@@ -18,14 +17,6 @@ export default function ProcessSection() {
             last={index === processSteps.length - 1}
           />
         ))}
-      </div>
-      <div className="mx-auto mt-12 flex max-w-[48rem] flex-col items-center text-center">
-        <Button href={CALENDAR_URL} variant="primary" target="_blank" rel="noopener noreferrer">
-          Umów 15-minutową rozmowę
-        </Button>
-        <p className="mt-3 max-w-[36ch] text-[14px] leading-[1.5] text-[var(--text-muted)]">
-          Bez zobowiązań. Piętnaście minut o tym, czego potrzebuje Twoja firma.
-        </p>
       </div>
     </SectionShell>
   );

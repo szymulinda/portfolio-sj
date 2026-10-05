@@ -16,7 +16,7 @@ export default function ProjectsSection() {
           ) : null;
         })}
       </div>
-      <p className="body-copy mx-auto mt-12 max-w-[70ch]">
+      <p className="section-note mx-auto mt-12 max-w-[70ch]">
         Status i liczby przy każdym wdrożeniu:{" "}
         <InlineLink href="/portfolio">zobacz wszystkie projekty</InlineLink>.
       </p>

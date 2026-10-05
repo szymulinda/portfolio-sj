@@ -1,6 +1,7 @@
 import { fraunces } from "@/lib/fonts";
 import SectionShell from "@/components/SectionShell";
 import FaqItem from "@/components/FaqItem";
+import Button from "@/components/Button";
 import { homeFaqs } from "@/lib/content";
 
 export default function HomeFaqSection() {
@@ -14,6 +15,12 @@ export default function HomeFaqSection() {
             <p className="body-copy">{faq.answer}</p>
           </FaqItem>
         ))}
+        <div className="faq-followup">
+          <p>Nie ma tu Twojego pytania?</p>
+          <Button href="/kontakt#formularz" variant="secondary">
+            Zadaj pytanie
+          </Button>
+        </div>
       </div>
     </SectionShell>
   );

@@ -9,7 +9,7 @@ import { breadcrumbList } from "@/lib/schema";
 import { InlineLink } from "@/components/InlineLink";
 
 export const metadata = pageMetadata({
-  title: "Kontakt — wycena i konsultacja | Szymon Jurkun",
+  title: "Kontakt - wycena i konsultacja | Szymon Jurkun",
   description:
     "Umów 15-minutową rozmowę albo napisz, co chcesz zbudować. Odpowiadam tego samego dnia roboczego.",
   path: "/kontakt",

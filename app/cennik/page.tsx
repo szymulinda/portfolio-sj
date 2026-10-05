@@ -12,7 +12,7 @@ import Link from "next/link";
 import { LinkedText, inlineLinkClass } from "@/components/InlineLink";
 
 export const metadata = pageMetadata({
-  title: "Cennik stron internetowych i aplikacji — jawne stawki",
+  title: "Cennik stron internetowych i aplikacji - jawne stawki",
   description:
     "Trzy pakiety od 3 500 zł netto plus opieka od 199 zł miesięcznie. Bez wyceny na telefon i bez ukrytych kosztów.",
   path: "/cennik",

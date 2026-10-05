@@ -2,7 +2,8 @@ import Image from "next/image";
 import { fraunces } from "@/lib/fonts";
 import SectionShell from "@/components/SectionShell";
 import { InlineLink } from "@/components/InlineLink";
-import { homeAbout } from "@/lib/content";
+import Button from "@/components/Button";
+import { CALENDAR_URL, homeAbout } from "@/lib/content";
 
 export default function AboutSection() {
   return (
@@ -17,15 +18,34 @@ export default function AboutSection() {
           sizes="(min-width: 768px) 280px, 240px"
           className="mx-auto block h-auto w-full max-w-[240px] rounded-[12px] object-contain md:mx-0 md:max-w-none"
         />
-        <div className="max-w-[70ch]">
-          {homeAbout.paragraphs.map((paragraph) => (
-            <p key={paragraph} className="mt-4 text-[15px] leading-[1.6] text-[var(--text)] first:mt-0">
-              {paragraph}
+        <div className="problem-prose about-prose">
+          {homeAbout.paragraphs.map((paragraph, index) => {
+            const turn =
+              index === 1 ? paragraph.match(/^[^.]+[.]/)?.[0] : undefined;
+
+            if (turn) {
+              return (
+                <div key={paragraph}>
+                  <p className="problem-turn">{turn}</p>
+                  <p className="problem-copy">{paragraph.slice(turn.length).trim()}</p>
+                </div>
+              );
+            }
+
+            return (
+              <p key={paragraph} className="problem-copy">
+                {paragraph}
+              </p>
+            );
+          })}
+          <div className="about-cta">
+            <Button href={CALENDAR_URL} variant="primary" target="_blank" rel="noopener noreferrer">
+              Umów 15-minutową rozmowę
+            </Button>
+            <p className="about-more">
+              <InlineLink href="/o-mnie">więcej o mnie</InlineLink>
             </p>
-          ))}
-          <p className="mt-4 text-[15px] leading-[1.6]">
-            <InlineLink href="/o-mnie">więcej o mnie</InlineLink>
-          </p>
+          </div>
         </div>
       </div>
     </SectionShell>

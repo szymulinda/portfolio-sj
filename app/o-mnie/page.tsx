@@ -9,7 +9,7 @@ import { breadcrumbList, person } from "@/lib/schema";
 import { LinkedText } from "@/components/InlineLink";
 
 export const metadata = pageMetadata({
-  title: "O mnie — Szymon Jurkun, inżynier oprogramowania",
+  title: "O mnie - Szymon Jurkun, inżynier oprogramowania",
   description:
     "Inżynier oprogramowania, student informatyki AGH, założyciel Callnest. Wdrażam strony dla klientów i buduję własne produkty.",
   path: "/o-mnie",

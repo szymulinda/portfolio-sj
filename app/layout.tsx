@@ -9,7 +9,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://szymonjurkun.pl"),
   title: {
-    default: "Strony internetowe Opole — Szymon Jurkun",
+    default: "Strony internetowe Opole - Szymon Jurkun",
     template: "%s · szymonjurkun.pl",
   },
   description: site.description,

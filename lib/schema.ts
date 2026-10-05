@@ -2,7 +2,7 @@ import { faqs, pricingPlans, site } from "@/lib/content";
 
 export const SITE_URL = "https://szymonjurkun.pl";
 
-/** Ręczne typy zamiast schema-dts — bez dodatkowej zależności w buildzie. */
+/** Ręczne typy zamiast schema-dts - bez dodatkowej zależności w buildzie. */
 export type JsonLd = Record<string, unknown>;
 
 export const PERSON_ID = `${SITE_URL}/o-mnie#person`;

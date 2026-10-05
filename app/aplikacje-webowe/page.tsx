@@ -9,7 +9,7 @@ import { breadcrumbList } from "@/lib/schema";
 import { LinkedText } from "@/components/InlineLink";
 
 export const metadata = pageMetadata({
-  title: "Aplikacje webowe na zamówienie — systemy dla firm",
+  title: "Aplikacje webowe na zamówienie - systemy dla firm",
   description:
     "Dedykowane aplikacje webowe, panele klienta, systemy rezerwacji i CRM. Architektura Next.js, TypeScript, PostgreSQL.",
   path: "/aplikacje-webowe",

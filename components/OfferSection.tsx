@@ -13,14 +13,19 @@ export default function OfferSection() {
           <OfferPlanCard key={plan.name} plan={plan} />
         ))}
       </div>
-      <p className="mx-auto mt-12 max-w-[70ch] text-center text-[15px] leading-[1.6] text-[var(--text-muted)]">
-        Po wdrożeniu: <InlineLink href="/opieka-techniczna">opieka techniczna</InlineLink> od 199 zł
-        miesięcznie. Buduję też <InlineLink href="/aplikacje-webowe">aplikacje webowe</InlineLink> i
-        wdrażam automatyzacje - odbieranie telefonów, umawianie wizyt, obsługę powtarzalnych pytań.
-        Osobno opisuję{" "}
-        <InlineLink href="/tworzenie-stron-www-opole">tworzenie stron www w Opolu</InlineLink>.
-        Szczegóły stawek: <InlineLink href="/cennik">pełny cennik</InlineLink>.
-      </p>
+      <div className="section-note mx-auto mt-12 flex max-w-[70ch] flex-col items-center gap-[10px] text-center">
+        <p>
+          Po wdrożeniu: <InlineLink href="/opieka-techniczna">opieka techniczna</InlineLink> od 199 zł
+          miesięcznie.
+        </p>
+        <p>
+          Buduję też <InlineLink href="/aplikacje-webowe">aplikacje webowe</InlineLink> i wdrażam
+          automatyzacje.
+        </p>
+        <p>
+          Szczegóły stawek: <InlineLink href="/cennik">pełny cennik</InlineLink>.
+        </p>
+      </div>
     </SectionShell>
   );
 }

@@ -6,7 +6,6 @@ import OfferSection from "@/components/OfferSection";
 import ProcessSection from "@/components/ProcessSection";
 import HomeFaqSection from "@/components/HomeFaqSection";
 import AboutSection from "@/components/AboutSection";
-import ContactSection from "@/components/ContactSection";
 import JsonLd from "@/components/JsonLd";
 import { ogImage } from "@/lib/metadata";
 import { homeFaqs } from "@/lib/content";
@@ -14,7 +13,7 @@ import { faqPage, professionalService, SITE_URL } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Strony internetowe Opole — Szymon Jurkun",
+    absolute: "Strony internetowe Opole - Szymon Jurkun",
   },
   description:
     "Strony internetowe dla firm z Opola i okolic. Dedykowany kod zamiast szablonów WordPress, ładowanie poniżej sekundy, jawne ceny od 3 500 zł netto.",
@@ -22,7 +21,7 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Strony internetowe Opole — Szymon Jurkun",
+    title: "Strony internetowe Opole - Szymon Jurkun",
     description:
       "Strony internetowe dla firm z Opola i okolic. Dedykowany kod zamiast szablonów WordPress, ładowanie poniżej sekundy, jawne ceny od 3 500 zł netto.",
     type: "website",
@@ -44,7 +43,6 @@ export default function HomePage() {
       <ProcessSection />
       <HomeFaqSection />
       <AboutSection />
-      <ContactSection />
     </main>
   );
 }

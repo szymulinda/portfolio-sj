@@ -111,7 +111,7 @@ export const projects: Project[] = [
     stack: "Next.js, TypeScript, Voice AI, integracje telefoniczne, PostgreSQL.",
     image: "/projects/callnest.webp",
     imageAlt:
-      "Callnest — strona na laptopie z hasłem o nieprzeoczonych połączeniach",
+      "Callnest - strona na laptopie z hasłem o nieprzeoczonych połączeniach",
   },
   {
     slug: "glamour-kosmetik",
@@ -138,7 +138,7 @@ export const projects: Project[] = [
     stack: "Next.js · Rezerwacje · SEO lokalne",
     image: "/projects/glamour.webp",
     imageAlt:
-      "Salon kosmetyczny w Opolu — strona na telefonie z przyciskiem rezerwacji",
+      "Salon kosmetyczny w Opolu - strona na telefonie z przyciskiem rezerwacji",
   },
   {
     slug: "atb-bud",
@@ -159,7 +159,7 @@ export const projects: Project[] = [
     stack: "Next.js · Galeria realizacji · SEO lokalne",
     image: "/projects/atb-bud.webp",
     imageAlt:
-      "ATB Bud — strona na laptopie z hasłem modernizujemy, nadzorujemy, odpowiadamy",
+      "ATB Bud - strona na laptopie z hasłem modernizujemy, nadzorujemy, odpowiadamy",
   },
   {
     slug: "mixmedix",
@@ -186,7 +186,7 @@ export const projects: Project[] = [
     stack: "React Native, TypeScript, PostgreSQL, silnik reguł z recenzją ekspercką.",
     image: "/projects/mixmedix.webp",
     imageAlt:
-      "MiXmediX — aplikacja na telefonie z wynikiem analizy suplementacji",
+      "MiXmediX - aplikacja na telefonie z wynikiem analizy suplementacji",
   },
 ];
 

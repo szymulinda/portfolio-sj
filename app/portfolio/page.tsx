@@ -9,7 +9,7 @@ import JsonLd from "@/components/JsonLd";
 import { breadcrumbList } from "@/lib/schema";
 
 export const metadata = pageMetadata({
-  title: "Portfolio — projekty własne i wdrożenia",
+  title: "Portfolio - projekty własne i wdrożenia",
   description:
     "Callnest, salon kosmetyczny w Opolu, ATB Bud, MiXmediX - dwa wdrożenia dla klientów i dwa produkty własne.",
   path: "/portfolio",

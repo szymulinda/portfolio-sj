@@ -18,7 +18,7 @@ export default function FaqItem({ children }: { children: ReactNode }) {
       >
         <span className="flex-1">{question}</span>
         <span aria-hidden className="text-[var(--text-subtle)]">
-          {open ? "–" : "+"}
+          {open ? "-" : "+"}
         </span>
       </button>
       <div className={open ? "mt-6" : "hidden"}>{answer}</div>

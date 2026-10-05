@@ -9,7 +9,7 @@ import { breadcrumbList } from "@/lib/schema";
 import { LinkedText } from "@/components/InlineLink";
 
 export const metadata = pageMetadata({
-  title: "Opieka techniczna strony internetowej — od 199 zł/mies.",
+  title: "Opieka techniczna strony internetowej - od 199 zł/mies.",
   description:
     "Hosting, monitoring, aktualizacje i poprawki w jednej opłacie od 199 zł netto miesięcznie. Bez licencji na wtyczki.",
   path: "/opieka-techniczna",

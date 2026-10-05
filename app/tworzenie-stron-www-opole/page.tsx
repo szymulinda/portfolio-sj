@@ -17,7 +17,7 @@ import {
 } from "@/lib/schema";
 
 export const metadata = pageMetadata({
-  title: "Tworzenie stron www Opole — dedykowany kod, nie szablon",
+  title: "Tworzenie stron www Opole - dedykowany kod, nie szablon",
   description:
     "Jak powstaje strona internetowa w Opolu: proces, technologia, terminy i koszty. Płacisz dopiero po akceptacji projektu graficznego.",
   path: "/tworzenie-stron-www-opole",
