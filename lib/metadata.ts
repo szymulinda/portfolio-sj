@@ -11,14 +11,19 @@ export function pageMetadata({
   title,
   description,
   path,
+  robots,
 }: {
   title: string;
   description: string;
   path: string;
+  robots?: Metadata["robots"];
 }): Metadata {
   return {
-    title,
+    title: {
+      absolute: title,
+    },
     description,
+    robots,
     alternates: {
       canonical: path,
     },

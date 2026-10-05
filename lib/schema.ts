@@ -30,7 +30,6 @@ export function professionalService(pageUrl: string): JsonLd {
       "@id": PERSON_ID,
     },
     knowsLanguage: "pl",
-    // taxID: "TODO: uzupełnić NIP",
   };
 }
 
@@ -53,11 +52,10 @@ export function person(): JsonLd {
       "Tworzenie stron internetowych",
       "Aplikacje webowe",
       "SEO techniczne",
+      "Sztuczna inteligencja",
+      "Automatyzacja",
     ],
-    // sameAs: [
-    //   "TODO: uzupełnić LinkedIn",
-    //   "TODO: uzupełnić GitHub, jeśli profil jest publiczny",
-    // ],
+    sameAs: ["https://www.linkedin.com/in/szymon-jurkun-701b3b336"],
     worksFor: {
       "@id": SERVICE_ID,
     },

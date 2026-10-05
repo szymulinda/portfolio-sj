@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import { fraunces } from "@/lib/fonts";
 import SectionShell from "@/components/SectionShell";
 import JsonLd from "@/components/JsonLd";
@@ -12,7 +13,7 @@ export default function InteriorPage({
 }: {
   label: string;
   title: string;
-  stub: string;
+  stub: ReactNode;
   path: string;
   extraJsonLd?: JsonLdData[];
 }) {
@@ -24,7 +25,7 @@ export default function InteriorPage({
       ))}
       <SectionShell label={label}>
         <h1 className={fraunces.className}>{title}</h1>
-        <p className="lead mt-6 max-w-[40rem]">{stub}</p>
+        <p className="lead mt-6 mx-auto max-w-[70ch]">{stub}</p>
       </SectionShell>
     </main>
   );

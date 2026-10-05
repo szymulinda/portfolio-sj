@@ -3,7 +3,7 @@ export const oMnie = {
   workHeading: "Czym się zajmuję",
   work: [
     "Robię trzy rzeczy, które da się utrzymać w jednym warsztacie: strony internetowe dla firm, dedykowane aplikacje webowe i systemy wewnętrzne oraz automatyzację powtarzalnej obsługi. Strona ma ściągać zapytania. Aplikacja ma zdjąć z Ciebie ręczną pracę, której arkusz już nie ogarnia. Automatyzacja ma odbierać telefon albo zamykać proste zlecenie, gdy Cię nie ma przy biurku.",
-    "Callnest jest tu argumentem, nie ozdobą. To firma z klientami, którzy płacą abonament co miesiąc. Jeśli agent nie umówi wizyty, przychód spada. Patrzę więc na Twoją stronę i panel tak samo: od strony kosztu, sprzedaży i tego, czy narzędzie wraca w zapytaniach, a nie od strony tego, czy layout ładnie wygląda na zrzucie.",
+    "Callnest jest tu argumentem, nie ozdobą. To firma z klientami, którzy płacą abonament co miesiąc. Jeśli agent nie umówi wizyty, przychód spada. Patrzę więc na Twoją stronę i panel tak samo: od strony kosztu, sprzedaży i tego, czy narzędzie wraca w zapytaniach, a nie od strony tego, czy layout ładnie wygląda na zrzucie. Prowadzę też wdrożenia dla klientów - strony, które już stoją w Google i zbierają wejścia, nie tylko własne produkty. Oto co zbudowałem.",
     "Nie prowadzę agencji z działem sprzedaży i kolejką juniorów. Bierzesz kontakt ze mną. Zakres, którego nie dowiozę sam, odrzucam albo rozmawiamy o tym wprost, zanim wystawię wycenę.",
     "Studia na Akademii Górniczo-Hutniczej im. Stanisława Staszica w Krakowie trzymają mnie po stronie inżynierskiej: architektura, bazy, Next.js, TypeScript, PostgreSQL i to, co da się utrzymać za rok. Strony, które sprzedaję, powstają w tym samym rzemiośle co produkty, które sam utrzymuję, a nie w motywie kupionym na weekend. SEO techniczne jest tu skutkiem szybkości i czystego HTML, nie osobnej wtyczki.",
   ],
@@ -21,5 +21,5 @@ export const oMnie = {
     "Nie sprzedaję pakietów godzin ani retainerów na bycie dostępnym. Sprzedaję skończoną stronę albo działający kawałek systemu. Jak zakres się kończy, praca się kończy. Jak chcesz dalej, umawiamy następny krok.",
   ],
   certificates:
-    "Certyfikaty z zakresu AI: [uzupełnij nazwy].",
+    "Certyfikaty: Adding Knowledge to LLMs (NVIDIA, 2026), Umiejętności Jutra AI 2.0 (Google, 2025).",
 };

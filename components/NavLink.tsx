@@ -17,7 +17,7 @@ export default function NavLink({
   return (
     <Link
       href={href}
-      className={`text-[0.95rem] font-medium hover:text-[var(--accent)] ${
+      className={`inline-flex min-h-[44px] items-center text-[0.95rem] font-medium hover:text-[var(--accent)] ${
         active
           ? "text-[var(--text)] underline decoration-[var(--accent)] underline-offset-4"
           : "text-[var(--text)]"

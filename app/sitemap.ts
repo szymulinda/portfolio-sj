@@ -6,8 +6,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return sitemapRoutes.map((route) => ({
     url: `https://szymonjurkun.pl${route.path === "/" ? "" : route.path}`,
-    lastModified:
-      "lastModified" in route ? new Date(route.lastModified) : builtAt,
+    lastModified: builtAt,
     changeFrequency: route.changeFrequency,
     priority: route.priority,
   }));

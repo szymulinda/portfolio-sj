@@ -8,7 +8,7 @@ export const opiekaTechniczna = {
     "Kopie zapasowe. Regularny zrzut plików i, jeśli strona ma panel z treścią, kopię tej treści. Jak coś się zepsuje przy zmianie, wracamy do wczorajszej wersji, a nie do pustej strony.",
     "Aktualizacje zależności. Biblioteki, z których strona korzysta, dostają łatki. Wgrywam je i sprawdzam, czy układ i formularz nadal działają. Nie czekam, aż stara wersja stanie się dziurą.",
     "Poprawki bezpieczeństwa. Gdy wychodzi luka w stosie, którego używam, łatam. Nie ma tu comiesięcznego skanera-wtyczki na WordPressie, bo nie ma WordPressa. Jest utrzymanie kodu, który sam napisałem.",
-    "Pula drobnych zmian w treści. Literówka, nowy numer telefonu, podmiana zdjęcia, dopisek w ofercie. To wchodzi w abonament, bez osobnej faktury za każdą zmianę. Nie jest to budżet na nową podstronę ani na przebudowę nagłówka.",
+    "Pula godzin: 2 godziny miesięcznie na drobne zmiany w treści, bez kumulacji na kolejny miesiąc. Literówka, nowy numer telefonu, podmiana zdjęcia, dopisek w ofercie. Bez osobnej faktury za każdą zmianę. Nie jest to budżet na nową podstronę ani na przebudowę nagłówka.",
     "Czas reakcji. Awaria dostępności: ten sam dzień roboczy. Drobna zmiana w treści: zwykle w ciągu dwóch dni roboczych, chyba że akurat jest kolejka większych poprawek - wtedy mówię termin, zanim obiecam jutro.",
     "Raport nie jest comiesięcznym PDF-em dla zasady. Jak coś padło, jak wgrałem łatę, jak zmieniłem treść - dostajesz krótką wiadomość. Cisza znaczy, że monitoring nic nie zgłosił, nie że strona leży bez opieki.",
   ],
@@ -31,7 +31,7 @@ export const opiekaTechniczna = {
   takeover: [
     "Mogę przejąć opiekę nad stroną, której nie budowałem, ale dopiero po audycie kodu. Muszę zobaczyć, na czym stoi, jak się wdraża, czy da się zrobić kopię i czy aktualizacja nie złoży produkcji. Bez tego nie podpisuję abonamentu, bo nie wiem, za co biorę odpowiedzialność.",
     "Nie przejmuję stron na WordPressie z kilkunastoma wtyczkami. Powód jest prosty: nie utrzymuję stosu, którego nie wybrałem, przy stawce liczonej na statyczny kod bez bazy. Aktualizacja motywu, konflikt wtyczek i dziura w nieutrzymywanej wtyczce to inna usługa i inna cena. W takim wypadku uczciwiej jest zaproponować nową stronę albo odmówić opieki, niż udawać, że 199 zł pokryje ten ogień.",
-    "Jeśli audyt wyjdzie czysty - przewidywalny kod, jasny deploy, brak czarnej skrzynki - możemy wejść w ten sam abonament co po moim wdrożeniu. Jeśli nie, powiem to w raporcie, zanim weźmiesz fakturę za nadzór, którego nie da się rzetelnie wykonać.",
+    "Jeśli audyt wyjdzie czysty - przewidywalny kod, jasny deploy, brak czarnej skrzynki - możemy wejść w ten sam abonament co po moim wdrożeniu. Jeśli nie, powiem to w raporcie, zanim weźmiesz fakturę za nadzór, którego nie da się rzetelnie wykonać. Jeśli kod jest do utrzymania, przekaż stronę pod opiekę.",
   ],
   close:
     "Opieka jest dobrowolna. Po rozliczeniu wdrożenia możesz zabrać pliki i iść dalej sam. Jeśli chcesz, żebym pilnował strony za Ciebie, napisz - ustalimy start abonamentu po publikacji albo po audycie.",

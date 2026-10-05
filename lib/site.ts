@@ -39,21 +39,3 @@ export const processSteps = [
     tone: "from-[#d7c4a8] to-[#8a7460]",
   },
 ];
-
-export const quotes = [
-  {
-    text: "Agent głosowy zdjął z nas wieczorne telefony. Klienci dostają odpowiedź, a my — spokojniejszy pipeline.",
-    name: "Anna Nowak",
-    role: "Callnest",
-  },
-  {
-    text: "Rezerwacje przestały żyć w zeszycie. Zespół widzi ten sam kalendarz i mniej się rozjeżdża.",
-    name: "Marek Lis",
-    role: "Vetsy",
-  },
-  {
-    text: "Portal jest cichy i konkretny. Ogłoszenie da się przeczytać, a nie tylko oglądać.",
-    name: "Ola Kruk",
-    role: "Nest",
-  },
-];

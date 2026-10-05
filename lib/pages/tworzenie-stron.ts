@@ -3,12 +3,12 @@ import { faqs } from "@/lib/content";
 export const tworzenieStron = {
   lead: "Projektuję i koduję strony internetowe dla firm z Opola i województwa opolskiego. Nie używam WordPressa ani kreatorów - piszę dedykowany kod w Next.js, tej samej technologii, w której powstają produkty cyfrowe. Ceny zaczynają się od 3 500 zł netto, a pierwszą transzę płacisz dopiero po akceptacji projektu graficznego.",
   insteadIntro:
-    "Szablon obiecuje szybki start. Po roku zostaje wolne ładowanie, opłaty za wtyczki i strach przed każdą aktualizacją. Zamiast tego dostajesz stronę napisaną pod Twoją ofertę, z kodem, który da się utrzymać i zabrać. Poniżej trzy rzeczy, które realnie odczuwasz po wdrożeniu - nie lista technologii dla technologii.",
+    "Szablon obiecuje szybki start. Po roku zostaje wolne ładowanie, opłaty za wtyczki i strach przed każdą aktualizacją. Zamiast tego dostajesz stronę napisaną pod Twoją ofertę, z kodem, który da się utrzymać i zabrać. Poniżej cztery rzeczy, które realnie odczuwasz po wdrożeniu - nie lista technologii dla technologii.",
   instead: [
     {
       title: "Dedykowany kod w Next.js",
       paragraphs: [
-        "Strona jest składana zanim ktokolwiek ją odwiedzi. Serwer oddaje gotowy dokument, a nie składa go z bazy danych przy każdym wejściu. Dla Ciebie znaczy to prosto: strona pojawia się poniżej sekundy, także na słabszym telefonie.",
+        "Strona jest składana zanim ktokolwiek ją odwiedzi. Serwer oddaje gotowy dokument, a nie składa go z bazy danych przy każdym wejściu. Dla Ciebie znaczy to prosto: strona pojawia się poniżej sekundy, także na słabszym telefonie. Tak powstają projekty zbudowane w tej technologii.",
         "Nie ma wtyczek do łatania i nie ma panelu, który wystawia się na atak. Mniej ruchomych części to mniej awarii i mniej rachunków za gaszenie pożarów. Aktualizacja oferty nie wymaga czekania, aż ktoś zgra wtyczki i sprawdzi, czy motyw nadal działa.",
       ],
     },
@@ -24,6 +24,12 @@ export const tworzenieStron = {
       paragraphs: [
         "Lighthouse to narzędzie Google, które mierzy szybkość, dostępność i podstawy techniczne strony. Wysoki wynik nie jest ozdobą w ofercie - szybkość jest jednym z czynników rankingowych, a wolna strona gubi ludzi na telefonie, zanim zdążą przeczytać ofertę.",
         "Gwarantuję 95+ w dniu wydania. Zastrzeżenie jest uczciwe: piksel reklamowy, widżet czatu albo ciężki film wklejony później mogą ten wynik obniżyć. Wtedy widać koszt dodatku, zanim go włączymy.",
+      ],
+    },
+    {
+      title: "Bez ciasteczek i banerów zgody",
+      paragraphs: [
+        "Ta strona nie zapisuje niczego w Twojej przeglądarce i nie korzysta z zewnętrznej analityki. Dzięki temu nie potrzebuje banera zgody, który odstrasza odwiedzających, i nie generuje obowiązków wynikających z RODO. Tak samo buduję strony dla klientów - analitykę podpinam tylko wtedy, gdy klient jej potrzebuje, i wtedy razem z poprawną zgodą.",
       ],
     },
   ],
@@ -64,7 +70,7 @@ export const tworzenieStron = {
     },
   ],
   timingIntro:
-    "Termin nie jest magią. Zależy od zakresu i od tego, czy materiały są na starcie, czy spływają po kawałku. Poniższe ramy liczę od akceptacji projektu, nie od pierwszej wiadomości.",
+    "Termin nie jest magią. Zależy od zakresu i od tego, czy materiały są na starcie, czy spływają po kawałku. Poniższe ramy liczę od akceptacji projektu, nie od pierwszej wiadomości. Osobno opisuję, ile kosztuje strona.",
   timing: [
     "Strona jednosekcyjna, jeden przekaz, formularz: do 2 tygodni od akceptacji projektu.",
     "Strona z kilkoma podstronami, cennikiem, mapą, galerią i panelem do treści: do 4 tygodni.",
@@ -124,5 +130,5 @@ export const tworzenieStron = {
   ],
   faqs,
   close:
-    "Jeśli ten model Ci odpowiada, napisz czym się zajmujesz i co strona ma załatwiać. Cennik pakietów jest osobno, bez ukrytych widełek.",
+    "Jeśli ten model Ci odpowiada, opisz swój projekt: czym się zajmujesz i co strona ma załatwiać.",
 };

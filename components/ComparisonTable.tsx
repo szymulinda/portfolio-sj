@@ -38,7 +38,7 @@ export default function ComparisonTable() {
           ))}
         </tbody>
       </table>
-      <p className="body-copy mt-6 max-w-[40rem]">{note}</p>
+      <p className="body-copy mt-6 mx-auto max-w-[70ch]">{note}</p>
     </div>
   );
 }

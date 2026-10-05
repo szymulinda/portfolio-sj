@@ -1,6 +1,6 @@
 import { fraunces } from "@/lib/fonts";
 import Button from "@/components/Button";
-import { hero } from "@/lib/content";
+import { hero, CALENDAR_URL } from "@/lib/content";
 
 export default function Hero() {
   return (
@@ -12,12 +12,12 @@ export default function Hero() {
           <em>{hero.accent}</em>
           {hero.line2rest}
         </h1>
-        <p className="lead mt-6 max-w-[40rem]">{hero.support}</p>
+        <p className="lead mt-6 max-w-[70ch]">{hero.support}</p>
         <div className="mt-6 flex flex-wrap items-center gap-4">
-          <Button href="/cennik" variant="primary">
+          <Button href={CALENDAR_URL} variant="primary" target="_blank" rel="noopener noreferrer">
             {hero.primaryCta}
           </Button>
-          <Button href="/kontakt" variant="secondary">
+          <Button href="#cennik" variant="secondary">
             {hero.secondaryCta}
           </Button>
         </div>

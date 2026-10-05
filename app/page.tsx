@@ -2,13 +2,15 @@ import type { Metadata } from "next";
 import Hero from "@/components/Hero";
 import ProblemSection from "@/components/ProblemSection";
 import ProjectsSection from "@/components/ProjectsSection";
-import ServicesSection from "@/components/ServicesSection";
-import PricingSection from "@/components/PricingSection";
+import OfferSection from "@/components/OfferSection";
 import ProcessSection from "@/components/ProcessSection";
+import HomeFaqSection from "@/components/HomeFaqSection";
+import AboutSection from "@/components/AboutSection";
 import ContactSection from "@/components/ContactSection";
 import JsonLd from "@/components/JsonLd";
 import { ogImage } from "@/lib/metadata";
-import { professionalService, SITE_URL } from "@/lib/schema";
+import { homeFaqs } from "@/lib/content";
+import { faqPage, professionalService, SITE_URL } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: {
@@ -34,12 +36,14 @@ export default function HomePage() {
   return (
     <main>
       <JsonLd data={professionalService(SITE_URL)} />
+      <JsonLd data={faqPage(homeFaqs)} />
       <Hero />
-      <ProblemSection />
       <ProjectsSection />
-      <ServicesSection />
-      <PricingSection />
+      <OfferSection />
+      <ProblemSection />
       <ProcessSection />
+      <HomeFaqSection />
+      <AboutSection />
       <ContactSection />
     </main>
   );

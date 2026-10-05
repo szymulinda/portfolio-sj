@@ -12,7 +12,7 @@ export default function FaqItem({ children }: { children: ReactNode }) {
     <article className="border-b border-[var(--line)] py-6 last:border-b-0 last:pb-0 first:pt-0">
       <button
         type="button"
-        className="flex w-full items-start justify-between gap-6 text-left"
+        className="flex min-h-[44px] w-full items-start justify-between gap-6 text-left"
         aria-expanded={open}
         onClick={() => setOpen((value) => !value)}
       >

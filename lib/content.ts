@@ -6,14 +6,16 @@ export const site = {
     "Strony internetowe dla firm z Opola i okolic. Dedykowany kod zamiast szablonów WordPress, ładowanie poniżej sekundy, jawne ceny od 3 500 zł netto.",
 };
 
+export const CALENDAR_URL = "https://cal.com/szymon-jurkun/15min";
+
 export const hero = {
   line1: "Strony internetowe, które",
   accent: "przynoszą zapytania",
   line2rest: ", nie tylko wyglądają",
   support:
     "Buduję strony w tej samej technologii, w której powstają produkty cyfrowe - nie na szablonach z wtyczkami. Ładują się poniżej sekundy, co Google premiuje w wynikach lokalnych. Prowadzę własną firmę technologiczną, więc patrzę na Twoją stronę od strony zapytań i kosztów, nie tylko wyglądu.",
-  primaryCta: "Zobacz cennik",
-  secondaryCta: "Napisz do mnie",
+  primaryCta: "Umów 15-minutową rozmowę",
+  secondaryCta: "Zobacz cennik",
 };
 
 export const problem = {
@@ -27,16 +29,23 @@ export const problem = {
   guarantee: "Gwarantuję wynik 95+ w Google Lighthouse na dzień wydania.",
 };
 
-export type ProjectStatus = "Działa" | "W budowie" | "MVP";
+export type ProjectStatus = "Działa" | "Wdrożone" | "W budowie" | "MVP";
 
 export type Project = {
   slug: string;
   title: string;
-  oneLiner: string;
+  category: string;
+  headline: string;
+  summary: string;
+  full: string;
+  results?: string[];
   tags: string[];
   status: ProjectStatus;
   problem: string[];
   solution: string[];
+  effect?: string[];
+  image?: string;
+  imageAlt?: string;
   stack: string;
 };
 
@@ -44,16 +53,26 @@ export type Service = {
   title: string;
   description: string;
   tags: string[];
+  href?: string;
+  anchor?: string;
+};
+
+export type PricingFeature = {
+  label: string;
+  note: string;
 };
 
 export type PricingPlan = {
   name: string;
   price: string;
   priceValue: number;
+  when: string;
   audience: string;
+  cta: string;
   featured?: boolean;
-  features: string[];
-  featureNotes: string[];
+  includesLead?: string;
+  includesNote?: string;
+  features: PricingFeature[];
 };
 
 export type ProcessItem = {
@@ -66,8 +85,13 @@ export const projects: Project[] = [
   {
     slug: "callnest",
     title: "Callnest",
-    oneLiner:
+    category: "Własny produkt",
+    headline:
+      "Platforma głosowych agentów AI odbierających telefony dla polskich firm usługowych",
+    summary:
       "Moja firma. Agenci głosowi AI odbierający telefony dla polskich firm usługowych - umawiają wizyty, odpowiadają na pytania, działają po godzinach. Model abonamentowy, klienci płacący co miesiąc.",
+    full: "Moja firma. Agenci głosowi AI odbierający telefony dla polskich firm usługowych - umawiają wizyty, odpowiadają na pytania, obsługują połączenia po godzinach otwarcia. Zbudowałem całość: logikę agenta, integrację z telefonią, panel klienta i proces sprzedaży. To projekt, dzięki któremu rozumiem biznes klienta od strony kosztów i zapytań, nie tylko kodu.",
+    results: ["Model abonamentowy", "Klienci płacący co miesiąc", "Wdrożenie w 48 godzin"],
     tags: ["AI", "SaaS", "Telefonia"],
     status: "Działa",
     problem: [
@@ -85,12 +109,67 @@ export const projects: Project[] = [
       "To nie projekt w portfolio. To firma z klientami, którzy płacą co miesiąc. Rozumiem przez to koszt pozyskania, utrzymania i rezygnacji - i tak samo patrzę na stronę, którą Ci buduję: ma przynosić zapytania, nie tylko wyglądać.",
     ],
     stack: "Next.js, TypeScript, Voice AI, integracje telefoniczne, PostgreSQL.",
+    image: "/projects/callnest.webp",
+    imageAlt:
+      "Callnest — strona na laptopie z hasłem o nieprzeoczonych połączeniach",
+  },
+  {
+    slug: "glamour-kosmetik",
+    // Po zgodzie klienta przywróć: title: "Glamour Kosmetik"
+    title: "Salon kosmetyczny w Opolu",
+    category: "Beauty",
+    headline:
+      "Pierwsze miejsce w Google i 156 wejść w cztery miesiące dla salonu kosmetycznego",
+    summary:
+      "Salon kosmetyczny w Opolu. Strona z galerią zabiegów, cennikiem i przejściem do rezerwacji, zbudowana pod telefon.",
+    full: "Salon prowadził całą sprzedaż przez Booksy i nie miał własnej obecności w Google. Zbudowałem stronę z galerią zabiegów, cennikiem i przejściem do rezerwacji, zaprojektowaną najpierw pod telefon - bo tak szuka większość klientek. Po czterech miesiącach strona zajmuje pierwsze miejsce w Google na nazwę salonu i pokazuje się w wynikach przy ponad dwudziestu różnych zabiegach.",
+    results: ["1. miejsce na nazwę salonu", "3 753 wyświetlenia w Google", "81% ruchu z telefonu"],
+    tags: ["Next.js", "Rezerwacje", "SEO lokalne"],
+    status: "Wdrożone",
+    problem: [
+      "Salon kosmetyczny w Opolu sprzedawał całość przez Booksy. W Google nie było własnej strony, więc ktoś szukający nazwy salonu lądował w katalogu albo u konkurencji.",
+    ],
+    solution: [
+      "Zbudowałem stronę z galerią zabiegów, cennikiem i przejściem do rezerwacji. Układ jest pod telefon, bo tam szuka większość klientek.",
+    ],
+    effect: [
+      "Po czterech miesiącach: pierwsze miejsce w Google na nazwę salonu, 3 753 wyświetlenia w wynikach wyszukiwania, 156 wejść. 81% ruchu z telefonu.",
+    ],
+    stack: "Next.js · Rezerwacje · SEO lokalne",
+    image: "/projects/glamour.webp",
+    imageAlt:
+      "Salon kosmetyczny w Opolu — strona na telefonie z przyciskiem rezerwacji",
+  },
+  {
+    slug: "atb-bud",
+    title: "ATB Bud",
+    category: "Firma budowlana",
+    headline: "Modernizacja strony opolskiej firmy budowlanej z galerią realizacji",
+    summary:
+      "Firma budowlana z Opola. Wdrożenie po starej, nieczytelnej stronie - klient nie widział zakresu usług ani realizacji.",
+    full: "Firma budowlana z Opola działająca od 2016 roku. Poprzednia strona była przestarzała i nie pokazywała ani zakresu usług, ani realizacji. Zbudowałem nową z galerią wykonanych prac, czytelnym opisem usług i formularzem kontaktowym - tak, żeby klient wiedział, czym firma się zajmuje, zanim zadzwoni.",
+    tags: ["Next.js", "Galeria realizacji", "SEO lokalne"],
+    status: "Wdrożone",
+    problem: [
+      "Firma budowlana z Opola ze starą, nieczytelną stroną. Klient nie widział zakresu usług ani realizacji.",
+    ],
+    solution: [
+      "Strona z galerią realizacji, opisem zakresu usług i formularzem kontaktowym. Zbudowana tak, żeby klient widział, co firma robi, zanim zadzwoni.",
+    ],
+    stack: "Next.js · Galeria realizacji · SEO lokalne",
+    image: "/projects/atb-bud.webp",
+    imageAlt:
+      "ATB Bud — strona na laptopie z hasłem modernizujemy, nadzorujemy, odpowiadamy",
   },
   {
     slug: "mixmedix",
     title: "MiXmediX",
-    oneLiner:
+    category: "W budowie",
+    headline:
+      "Aplikacja mobilna analizująca bezpieczeństwo suplementacji na silniku reguł",
+    summary:
       "Aplikacja mobilna analizująca bezpieczeństwo suplementacji: dawki, interakcje, przeciwwskazania. Działa na jawnym silniku reguł z przypisanym źródłem dowodów, nie na zgadywaniu AI. Reguły akceptuje ekspertka z Gdańskiego Uniwersytetu Medycznego.",
+    full: "Aplikacja mobilna analizująca bezpieczeństwo suplementacji: dawki, interakcje między składnikami, przeciwwskazania zdrowotne. Działa na jawnym silniku reguł z przypisanym źródłem i poziomem dowodów, nie na generowaniu odpowiedzi przez model językowy - przy treściach dotyczących zdrowia to różnica między odpowiedzią, za którą ktoś odpowiada, a zgadywaniem. Reguły bezpieczeństwa akceptuje ekspertka z Gdańskiego Uniwersytetu Medycznego.",
     tags: ["React Native", "Silnik reguł", "PostgreSQL"],
     status: "W budowie",
     problem: [
@@ -105,55 +184,36 @@ export const projects: Project[] = [
       "Aplikacja jest w budowie. Świadomie nie przyspieszam premiery kosztem nadzoru. Silnik i recenzja są ważniejsze niż data w sklepie.",
     ],
     stack: "React Native, TypeScript, PostgreSQL, silnik reguł z recenzją ekspercką.",
-  },
-  {
-    slug: "vetsy",
-    title: "Vetsy",
-    oneLiner:
-      "Platforma rezerwacji wizyt dla lecznic weterynaryjnych. Kalendarz, obsługa wielu placówek, panel dla personelu.",
-    tags: ["Next.js", "Supabase", "Rezerwacje"],
-    status: "MVP",
-    problem: [
-      "Przychodnie weterynaryjne gubią terminy między zeszytem, telefonem i kilkoma osobami przy recepcji. Właściciel zwierzęcia dzwoni, bo nie ma jak sprawdzić wolnego okna sam.",
-      "Kilka placówek psuje to jeszcze bardziej: wolny termin w jednej klinice nic nie mówi o drugiej, a personel nie wie, czy klient już jest zapisany.",
-    ],
-    solution: [
-      "Vetsy to kalendarz rezerwacji z panelem dla personelu i obsługą wielu placówek. Właściciel rezerwuje wizytę, klinika widzi dzień w jednym miejscu.",
-      "MVP pokrywa ten przebieg, bez udawania pełnego systemu klinicznego z magazynem leków i księgowością. Najpierw umówienie, potem reszta, jeśli przebieg się broni.",
-    ],
-    stack: "Next.js, TypeScript, Supabase, kalendarz rezerwacji.",
-  },
-  {
-    slug: "nest",
-    title: "Nest",
-    oneLiner:
-      "Portal ogłoszeń nieruchomości z wyszukiwarką, filtrami i mapą. Panel do wystawiania i zarządzania ofertami.",
-    tags: ["Next.js", "PostgreSQL", "Mapy"],
-    status: "MVP",
-    problem: [
-      "Ogłoszenia nieruchomości giną w ogólnych portalach albo siedzą w plikach, których nikt nie filtruje po mapie, cenie i metrażu naraz.",
-      "Wystawiający potrzebuje panelu, a szukający - kilku filtrów, które nie kłamią. Gotowe silniki ogłoszeń ciągną za sobą funkcje, których mały serwis nie utrzyma.",
-    ],
-    solution: [
-      "Nest to wyszukiwarka z filtrami i mapą oraz panel do wystawiania ofert. MVP pokazuje, że ten przepływ da się złożyć w dedykowanym kodzie, bez gotowego silnika z półki.",
-      "Świadomie zostawiłem poza zakresem płatności, konta premium i porównywarkę kredytów. Najpierw znalezienie oferty i jej publikacja.",
-    ],
-    stack: "Next.js, TypeScript, PostgreSQL, mapa i filtry.",
+    image: "/projects/mixmedix.webp",
+    imageAlt:
+      "MiXmediX — aplikacja na telefonie z wynikiem analizy suplementacji",
   },
 ];
+
+/** Kolumny czytają w dół: Callnest i salon zostają na górze obu kolumn. */
+export const projectColumnOrder = [
+  "callnest",
+  "atb-bud",
+  "glamour-kosmetik",
+  "mixmedix",
+] as const;
 
 export const services: Service[] = [
   {
     title: "Strony internetowe dla firm",
     description:
-      "Strona, która ładuje się natychmiast i którą sam edytujesz bez ryzyka zepsucia układu.",
+      "Oferta to tworzenie stron www w Opolu: strona, która ładuje się natychmiast i którą sam edytujesz bez ryzyka zepsucia układu.",
     tags: ["Next.js", "SEO", "CMS"],
+    href: "/tworzenie-stron-www-opole",
+    anchor: "tworzenie stron www w Opolu",
   },
   {
     title: "Aplikacje i systemy wewnętrzne",
     description:
-      "Kiedy strona to za mało: panel klienta, system rezerwacji, kalkulator wyceny, integracja z tym, czego już używasz.",
+      "Kiedy strona to za mało: aplikacje webowe i systemy, panel klienta, rezerwacje, kalkulator wyceny, integracja z tym, czego już używasz.",
     tags: ["CRM", "Panele", "Integracje"],
+    href: "/aplikacje-webowe",
+    anchor: "aplikacje webowe i systemy",
   },
   {
     title: "Opieka techniczna",
@@ -170,72 +230,118 @@ export const services: Service[] = [
 ];
 
 export const pricing = {
-  heading: "Ceny",
-  headingAccent: "bez wyceny na telefon",
+  label: "Oferta",
+  heading: "Trzy sposoby, w jakie mogę pomóc",
   featuredLabel: "Najczęściej wybierany",
-  sla: "Opieka techniczna - od 199 zł netto miesięcznie. Hosting, monitoring, aktualizacje i pula drobnych poprawek w treści. Bez opłat za licencje wtyczek, bo ich nie używam.",
 };
 
 export const pricingPlans: PricingPlan[] = [
   {
     name: "Start",
-    price: "3 500 zł netto",
+    price: "3 500 zł",
     priceValue: 3500,
-    audience: "Jedna usługa, prosty przekaz",
+    when: "Kiedy masz jedną usługę i prosty przekaz.",
+    audience:
+      "Małe firmy usługowe, które potrzebują widocznej wizytówki w internecie.",
+    cta: "Umów rozmowę",
     features: [
-      "Strona jednosekcyjna",
-      "Formularz kontaktowy",
-      "Optymalizacja pod Google",
-      "Wynik 95+ Lighthouse",
-      "Wdrożenie do 2 tygodni",
-    ],
-    featureNotes: [
-      "Jedna strona od oferty do zapytania, bez menu, w którym klient się gubi.",
-      "Wiadomość na Twój mail. Bez wtyczki, która psuje się po aktualizacji.",
-      "Tytuły i opisy pod frazy, na które ktoś z okolicy realnie szuka.",
-      "Gwarantuję 95+ w dniu wydania. Punkt startu w Google, nie ozdoba.",
-      "Dwa tygodnie to dolny próg, gdy treści są albo szkicujemy je z rozmowy.",
+      {
+        label: "Strona jednosekcyjna",
+        note: "Jedna strona od oferty do zapytania, bez menu, w którym klient się gubi.",
+      },
+      {
+        label: "Formularz kontaktowy",
+        note: "Wiadomość na Twój mail. Bez wtyczki, która psuje się po aktualizacji.",
+      },
+      {
+        label: "Optymalizacja pod Google",
+        note: "Tytuły i opisy pod frazy, na które ktoś z okolicy realnie szuka.",
+      },
+      {
+        label: "Wynik 95+ w Lighthouse",
+        note: "Gwarantuję 95+ w dniu wydania. Punkt startu w Google, nie ozdoba.",
+      },
+      {
+        label: "Podpięcie wizytówki Google",
+        note: "Profil firmy w Google podpięty pod stronę, żeby nazwa i adres się zgadzały.",
+      },
+      {
+        label: "Nagranie, jak samodzielnie edytować treści",
+        note: "Krótki film, jak zmienić tekst i zdjęcie bez ruszania układu.",
+      },
+      {
+        label: "Wdrożenie do 2 tygodni",
+        note: "Dwa tygodnie to dolny próg, gdy treści są albo szkicujemy je z rozmowy.",
+      },
     ],
   },
   {
     name: "Biznes",
-    price: "5 900 zł netto",
+    price: "5 900 zł",
     priceValue: 5900,
-    audience: "Firma z pełną ofertą i lokalnym SEO",
+    when: "Kiedy masz pełną ofertę i chcesz, żeby klient znalazł właściwą usługę.",
+    audience:
+      "Firmy z kilkoma usługami, które chcą być widoczne w lokalnych wynikach wyszukiwania.",
+    cta: "Umów rozmowę",
     featured: true,
+    includesLead: "Wszystko z pakietu Start oraz:",
     features: [
-      "Do 6 podstron",
-      "Panel do edycji treści",
-      "Optymalizacja pod frazy lokalne",
-      "Mapa, galeria, cennik",
-      "Wdrożenie do 4 tygodni",
-    ],
-    featureNotes: [
-      "Osobne adresy na usługi i cennik - Google indeksuje je osobno.",
-      "Zmieniasz oferty i zdjęcia bez ruszania układu. Dostajesz nagranie.",
-      "Frazy usługa plus miasto, spójne z wizytówką Google.",
-      "Mapa, galeria, ceny - to, czego szuka ktoś jeszcze niezdecydowany.",
-      "Cztery tygodnie przy kompletnych treściach. Czeka się zwykle na zdjęcia.",
+      {
+        label: "Do 6 podstron",
+        note: "Osobne adresy na usługi i cennik - Google indeksuje je osobno.",
+      },
+      {
+        label: "Panel do samodzielnej edycji treści",
+        note: "Zmieniasz oferty i zdjęcia bez ruszania układu. Dostajesz nagranie.",
+      },
+      {
+        label: "Optymalizacja pod frazy lokalne",
+        note: "Frazy usługa plus miasto, spójne z wizytówką Google.",
+      },
+      {
+        label: "Mapa, galeria i cennik",
+        note: "Mapa, galeria, ceny - to, czego szuka ktoś jeszcze niezdecydowany.",
+      },
+      {
+        label: "Dane strukturalne dla Google",
+        note: "Dane, które Google czyta jako firmę, nie tylko jako tekst na stronie.",
+      },
+      {
+        label: "Wdrożenie do 4 tygodni",
+        note: "Cztery tygodnie przy kompletnych treściach. Czeka się zwykle na zdjęcia.",
+      },
     ],
   },
   {
     name: "Dedykowany",
-    price: "od 9 900 zł netto",
+    price: "od 9 900 zł",
     priceValue: 9900,
-    audience: "Własna logika i integracje",
+    when: "Kiedy strona to za mało i potrzebujesz systemu.",
+    audience: "Firmy, którym gotowe narzędzia przestały wystarczać.",
+    cta: "Porozmawiajmy",
+    includesLead: "Wszystko z pakietu Biznes oraz:",
+    includesNote: "Baza strony firmowej plus logika, której nie wciśniesz w motyw.",
     features: [
-      "Wszystko z pakietu Biznes",
-      "Panel klienta lub system rezerwacji",
-      "Integracje z systemami zewnętrznymi",
-      "Baza danych i konta użytkowników",
-      "Termin ustalany indywidualnie",
-    ],
-    featureNotes: [
-      "Baza strony firmowej plus logika, której nie wciśniesz w motyw.",
-      "Klient loguje się, rezerwuje albo śledzi zlecenie sam.",
-      "Kalendarz, płatności albo CRM, którego już używasz.",
-      "Konta i role u Ciebie, nie w cudzym panelu na abonamencie.",
-      "Najpierw najmniejsza działająca wersja, potem rozbudowa.",
+      {
+        label: "Panel klienta lub system rezerwacji",
+        note: "Klient loguje się, rezerwuje albo śledzi zlecenie sam.",
+      },
+      {
+        label: "Integracje z systemami, których już używasz",
+        note: "Kalendarz, płatności albo CRM, którego już używasz.",
+      },
+      {
+        label: "Baza danych i konta użytkowników",
+        note: "Konta i role u Ciebie, nie w cudzym panelu na abonamencie.",
+      },
+      {
+        label: "Automatyzacja powtarzalnych zadań",
+        note: "Powtarzalne pytania, telefony albo zapisy, które da się zamknąć bez Ciebie przy biurku.",
+      },
+      {
+        label: "Termin ustalany indywidualnie",
+        note: "Najpierw najmniejsza działająca wersja, potem rozbudowa.",
+      },
     ],
   },
 ];
@@ -277,8 +383,52 @@ export const contact = {
   headingAccent: "co chcesz zbudować",
   support:
     "Odpowiadam tego samego dnia roboczego. Jeśli masz już stronę - podeślij adres, sprawdzę jej szybkość i napiszę, co da się poprawić.",
-  cta: "Napisz do mnie",
+  cta: "Umów 15-minutową rozmowę",
+  secondaryCta: "Zadaj pytanie",
   submit: "Wyślij wiadomość",
+};
+
+export const homeFaqs = [
+  {
+    question: "Ile kosztuje strona?",
+    answer:
+      "Od 3 500 zł netto za stronę jednosekcyjną, 5 900 zł za stronę wielopodstronową. Pełny zakres każdego pakietu jest w cenniku. Wycena jest ostateczna - nie doliczam nic po drodze.",
+  },
+  {
+    question: "Co jeśli nie spodoba mi się projekt?",
+    answer:
+      "Pierwszą transzę płacisz dopiero po zaakceptowaniu projektu graficznego. Jeśli kierunek Ci nie odpowiada, rozstajemy się i nic nie płacisz.",
+  },
+  {
+    question: "Czy mogę sam zmieniać treści?",
+    answer:
+      "Tak. W pakiecie Biznes dostajesz panel do edycji i krótkie nagranie, jak go obsługiwać. Zmiana tekstu czy zdjęcia nie wymaga kontaktu ze mną.",
+  },
+  {
+    question: "Czy trzeba płacić co miesiąc?",
+    answer:
+      "Nie. Strona jest Twoja po rozliczeniu, razem z kodem. Opieka techniczna jest opcjonalna - od 199 zł miesięcznie, jeśli chcesz, żebym pilnował działania.",
+  },
+  {
+    question: "Co z hostingiem i domeną?",
+    answer:
+      "Hosting jest wliczony w opiekę techniczną. Bez niej podepnę stronę pod Twoje konto. Domenę rejestrujesz na siebie - zawsze zostaje Twoja.",
+  },
+  {
+    question: "Ile to trwa?",
+    answer:
+      "Dwa tygodnie przy pakiecie Start, cztery przy Biznes. Liczy się od momentu, w którym mam od Ciebie treści i zdjęcia - to zwykle ten etap wydłuża projekt.",
+  },
+];
+
+export const homeAbout = {
+  label: "Kto za tym stoi",
+  heading: "Jedna osoba, nie agencja",
+  paragraphs: [
+    "Nazywam się Szymon Jurkun. Jestem inżynierem oprogramowania i studentem informatyki na AGH.",
+    "Prowadzę Callnest - własną firmę wdrażającą głosowych agentów AI dla polskich firm usługowych. Dzięki temu patrzę na Twoją stronę nie tylko od strony kodu, ale też kosztów i zapytań, bo sam prowadzę biznes sprzedający do tych samych odbiorców.",
+    "Pracujesz bezpośrednio ze mną, od pierwszej rozmowy do uruchomienia. Nie ma działu obsługi ani opiekuna projektu.",
+  ],
 };
 
 export const faqs = [
@@ -300,7 +450,7 @@ export const faqs = [
   {
     question: "Czy trzeba płacić co miesiąc?",
     answer:
-      "Nie za samą stronę. Po rozliczeniu kod jest Twój. Opieka techniczna to osobna, dobrowolna usługa od 199 zł netto miesięcznie: hosting, monitoring, aktualizacje i pula drobnych poprawek. Bez opłat za licencje wtyczek, bo ich nie używam.",
+      "Nie za samą stronę. Po rozliczeniu kod jest Twój. Opieka techniczna to osobna, dobrowolna usługa od 199 zł netto miesięcznie: hosting, monitoring, aktualizacje i 2 godziny miesięcznie na drobne zmiany w treści, bez kumulacji na kolejny miesiąc. Bez opłat za licencje wtyczek, bo ich nie używam.",
   },
   {
     question: "Co z hostingiem i domeną?",

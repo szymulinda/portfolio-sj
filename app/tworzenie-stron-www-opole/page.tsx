@@ -3,10 +3,12 @@ import SectionShell from "@/components/SectionShell";
 import ProcessStepExpandable from "@/components/ProcessStepExpandable";
 import ComparisonTable from "@/components/ComparisonTable";
 import FaqItem from "@/components/FaqItem";
-import Button from "@/components/Button";
 import { tworzenieStron } from "@/lib/pages/tworzenie-stron";
 import { pageMetadata } from "@/lib/metadata";
 import JsonLd from "@/components/JsonLd";
+import { LinkedText } from "@/components/InlineLink";
+import Button from "@/components/Button";
+import { CALENDAR_URL } from "@/lib/content";
 import {
   breadcrumbList,
   faqPage,
@@ -35,12 +37,12 @@ export default function Page() {
         <h1 className={fraunces.className}>
           Tworzenie stron www w Opolu - <em>jak to robię</em>
         </h1>
-        <p className="lead mt-6 max-w-[40rem]">{copy.lead}</p>
+        <p className="lead mt-6 mx-auto max-w-[70ch]">{copy.lead}</p>
       </SectionShell>
 
       <SectionShell label="Zakres">
         <h2 className={fraunces.className}>Co dostajesz zamiast szablonu</h2>
-        <p className="lead mt-6 max-w-[40rem]">{copy.insteadIntro}</p>
+        <p className="lead mt-6 mx-auto max-w-[70ch]">{copy.insteadIntro}</p>
         <div className="mt-12 flex flex-col">
           {copy.instead.map((item, index) => (
             <article
@@ -53,8 +55,16 @@ export default function Page() {
             >
               <h3 className={`${fraunces.className} font-semibold`}>{item.title}</h3>
               {item.paragraphs.map((paragraph) => (
-                <p key={paragraph} className="body-copy mt-6 max-w-[40rem]">
-                  {paragraph}
+                <p key={paragraph} className="body-copy mt-6 mx-auto max-w-[70ch]">
+                  {paragraph.includes("projekty zbudowane w tej technologii") ? (
+                    <LinkedText
+                      text={paragraph}
+                      href="/portfolio"
+                      anchor="projekty zbudowane w tej technologii"
+                    />
+                  ) : (
+                    paragraph
+                  )}
                 </p>
               ))}
             </article>
@@ -64,7 +74,7 @@ export default function Page() {
 
       <SectionShell label="Współpraca">
         <h2 className={fraunces.className}>Jak przebiega współpraca</h2>
-        <p className="lead mt-6 max-w-[40rem]">{copy.collaborationIntro}</p>
+        <p className="lead mt-6 mx-auto max-w-[70ch]">{copy.collaborationIntro}</p>
         <div className="mt-12 flex flex-col">
           {copy.collaboration.map((item, index) => (
             <ProcessStepExpandable
@@ -80,8 +90,14 @@ export default function Page() {
 
       <SectionShell label="Terminy">
         <h2 className={fraunces.className}>Ile to trwa i od czego zależy</h2>
-        <p className="lead mt-6 max-w-[40rem]">{copy.timingIntro}</p>
-        <ul className="mt-6 max-w-[40rem] space-y-6">
+        <p className="lead mt-6 mx-auto max-w-[70ch]">
+          <LinkedText
+            text={copy.timingIntro}
+            href="/cennik"
+            anchor="ile kosztuje strona"
+          />
+        </p>
+        <ul className="mt-6 mx-auto max-w-[70ch] space-y-6">
           {copy.timing.map((item) => (
             <li key={item} className="body-copy">
               {item}
@@ -92,14 +108,14 @@ export default function Page() {
 
       <SectionShell label="Porównanie">
         <h2 className={fraunces.className}>WordPress a kod dedykowany</h2>
-        <p className="lead mt-6 max-w-[40rem]">{copy.compareIntro}</p>
+        <p className="lead mt-6 mx-auto max-w-[70ch]">{copy.compareIntro}</p>
         <ComparisonTable />
       </SectionShell>
 
       <SectionShell label="Granice">
         <h2 className={fraunces.className}>Dla kogo to nie jest</h2>
-        <p className="lead mt-6 max-w-[40rem]">{copy.notForIntro}</p>
-        <ul className="mt-6 max-w-[40rem] space-y-6">
+        <p className="lead mt-6 mx-auto max-w-[70ch]">{copy.notForIntro}</p>
+        <ul className="mt-6 mx-auto max-w-[70ch] space-y-6">
           {copy.notFor.map((item) => (
             <li key={item} className="body-copy">
               {item}
@@ -114,20 +130,19 @@ export default function Page() {
           {copy.faqs.map((faq) => (
             <FaqItem key={faq.question}>
               <h3 className={`${fraunces.className} font-semibold`}>{faq.question}</h3>
-              <p className="body-copy max-w-[40rem]">{faq.answer}</p>
+              <p className="body-copy mx-auto max-w-[70ch]">{faq.answer}</p>
             </FaqItem>
           ))}
         </div>
       </SectionShell>
 
       <SectionShell label="Dalej">
-        <p className="lead max-w-[40rem]">{copy.close}</p>
-        <div className="mt-6 flex flex-wrap items-center gap-4">
-          <Button href="/kontakt" variant="primary">
-            Napisz do mnie
-          </Button>
-          <Button href="/cennik" variant="secondary">
-            Zobacz cennik
+        <p className="lead mx-auto max-w-[70ch]">
+          <LinkedText text={copy.close} href="/kontakt#formularz" anchor="opisz swój projekt" />
+        </p>
+        <div className="mt-6">
+          <Button href={CALENDAR_URL} variant="primary" target="_blank" rel="noopener noreferrer">
+            Umów 15-minutową rozmowę
           </Button>
         </div>
       </SectionShell>

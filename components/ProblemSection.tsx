@@ -8,7 +8,7 @@ export default function ProblemSection() {
       <h2 className={fraunces.className}>
         {problem.heading} <em>{problem.headingAccent}</em>
       </h2>
-      <div className="mt-6 max-w-[40rem] space-y-6">
+      <div className="mx-auto max-w-[70ch] space-y-6">
         {problem.paragraphs.map((paragraph) => (
           <p key={paragraph} className="lead">
             {paragraph}

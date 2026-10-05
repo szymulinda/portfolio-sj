@@ -24,31 +24,26 @@ export const sitemapRoutes = [
     path: "/aplikacje-webowe",
     priority: 0.8,
     changeFrequency: "monthly" as const,
-    lastModified: "2026-09-24",
   },
   {
     path: "/opieka-techniczna",
     priority: 0.8,
     changeFrequency: "monthly" as const,
-    lastModified: "2026-09-24",
   },
   {
     path: "/cennik",
     priority: 0.8,
     changeFrequency: "monthly" as const,
-    lastModified: "2026-09-24",
   },
   {
     path: "/portfolio",
     priority: 0.8,
     changeFrequency: "monthly" as const,
-    lastModified: "2026-09-24",
   },
   {
     path: "/o-mnie",
     priority: 0.7,
     changeFrequency: "monthly" as const,
-    lastModified: "2026-09-24",
   },
   { path: "/kontakt", priority: 0.8, changeFrequency: "monthly" as const },
   {

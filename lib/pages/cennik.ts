@@ -8,6 +8,8 @@ export const cennik = {
   sitesHeading: "Strony internetowe",
   sitesIntro:
     "Trzy pakiety. Cena jest netto, za wdrożenie, bez abonamentu za sam fakt posiadania strony. Środkowy pakiet jest tym, którego najczęściej potrzebuje firma z kilku usługami i lokalnym wyszukiwaniem.",
+  sitesAfter:
+    "Proces od rozmowy do publikacji opisuję tu: jak powstaje strona.",
   appsHeading: "Aplikacje i systemy",
   apps: [
     "Gdy strona ma logować użytkowników, trzymać dane albo łączyć się z kalendarzem, nie da się uczciwie sprzedać tego jako sztywnej karty. Wycena jest indywidualna, bo dwa systemy o podobnym opisie potrafią różnić się trzykrotnie nakładem.",
@@ -15,8 +17,8 @@ export const cennik = {
   ],
   careHeading: "Opieka techniczna",
   care: [
-    "Od 199 zł netto miesięcznie. Po wdrożeniu mogę prowadzić hosting, pilnować dostępności, wgrywać aktualizacje zależności i wprowadzać drobne poprawki w treści. To dobrowolne. Po rozliczeniu kod jest Twój i możesz zabrać stronę gdzie indziej.",
-    "W abonamencie nie ma opłat za licencje wtyczek, bo ich nie używam. Nowe podstrony, przebudowa układu i nowe funkcje są poza opieką i wyceniam je osobno. Szczegóły zakresu są na stronie opieki technicznej.",
+    "Od 199 zł netto miesięcznie. Po wdrożeniu mogę prowadzić hosting, pilnować dostępności, wgrywać aktualizacje zależności i wprowadzać drobne poprawki w treści - 2 godziny miesięcznie na drobne zmiany w treści, bez kumulacji na kolejny miesiąc. To dobrowolne. Po rozliczeniu kod jest Twój i możesz zabrać stronę gdzie indziej.",
+    "W abonamencie nie ma opłat za licencje wtyczek, bo ich nie używam. Nowe podstrony, przebudowa układu i nowe funkcje są poza opieką i wyceniam je osobno. Tu jest zakres opieki technicznej.",
   ],
   factorsHeading: "Co wpływa na końcową cenę",
   factorsIntro:
@@ -49,6 +51,11 @@ export const cennik = {
       question: "Ile kosztuje hosting i domena przy współpracy ze mną?",
       answer:
         "Domena zostaje Twoja - podpinam istniejącą albo pomagam wybrać rejestratora. Hosting w opiece jest w 199 zł netto miesięcznie. Możesz też wziąć pliki po rozliczeniu i postawić je sam. Nie chowam hostingu w cenie pakietu Start.",
+    },
+    {
+      question: "Czy strona będzie miała baner cookies?",
+      answer:
+        "Tylko jeśli będzie potrzebny. Domyślnie buduję strony bez zewnętrznej analityki i bez ciasteczek, więc baner jest zbędny. Jeśli chcesz mierzyć ruch, podepnę analitykę razem z poprawnym mechanizmem zgody.",
     },
   ],
   close: "Jeśli widełki pasują, napisz czym się zajmujesz i co strona albo system ma załatwiać. Odpowiadam tego samego dnia roboczego.",

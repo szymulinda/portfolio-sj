@@ -15,7 +15,7 @@ export const aplikacjeWebowe = {
     "To najczęstszy pierwszy system: klient loguje się, widzi terminy, rezerwuje, dostaje potwierdzenie, a personel ogarnia dzień w jednym kalendarzu zamiast w zeszycie i trzech telefonach.",
     "Vetsy powstało właśnie z tego przebiegu. Lecznicom weterynaryjnym brakowało rezerwacji z obsługą kilku placówek i panelem dla recepcji. MVP zamyka umówienie wizyty i widok dnia. Nie udaje pełnego systemu klinicznego z magazynem leków i księgowością w jednym. Najpierw ten wątek, który boli codziennie.",
     "Gdy przychodnia ma dwie lokalizacje, jeden kalendarz przestaje wystarczać. Trzeba wiedzieć, kto jest w której placówce, które okna są wspólne i co się dzieje, gdy klient się spóźni. To już nie wtyczka do strony. To aplikacja z rolami.",
-    "Ten sam wzorzec działa w usługach, gabinetach, serwisach i małych zespołach terenowych. Różnią się reguły, nie potrzeba: jeden kalendarz, jasne role, mniej dzwonienia po to, co widać na ekranie.",
+    "Ten sam wzorzec działa w usługach, gabinetach, serwisach i małych zespołach terenowych. Różnią się reguły, nie potrzeba: jeden kalendarz, jasne role, mniej dzwonienia po to, co widać na ekranie. Vetsy zostaje tu jako MVP tego przebiegu. Działający produkt: zobacz Callnest w portfolio.",
   ],
   crmHeading: "Narzędzia wewnętrzne i CRM",
   crm: [
@@ -46,7 +46,7 @@ export const aplikacjeWebowe = {
     "Wycena jest po specyfikacji, nie przed. Widełki od 9 900 zł netto dotyczą małego panelu albo rezerwacji z jednym kalendarzem. Więcej ról, więcej systemów na zewnątrz, więcej wyjątków - kwota idzie w górę, czasem do kilkudziesięciu tysięcy. Powiem to, zanim zacznę pisać kod.",
     "Budowa idzie od MVP: najmniejsza wersja, która zamyka jeden prawdziwy przebieg. Rezerwacja z potwierdzeniem. Status zlecenia, który klient widzi sam. Agent, który umawia, a nie tylko wita. Reszta poczeka. To obniża ryzyko po Twojej stronie - płacisz za działający kawałek, widzisz go w robocie, dopiero wtedy dokładamy następny.",
     "MVP nie znaczy byle jakie. Znaczy: jeden przebieg działa na telefonie, z prawdziwymi danymi i z kopią, do której da się wrócić. Ozdoby, raporty i drugi język czekają, aż ten przebieg zacznie się opłacać.",
-    "Rozwój po MVP jest osobnymi krokami, nie wieczną umową na wszystko. Możesz zatrzymać się po pierwszej wersji, zabrać kod i iść dalej sam albo ze mną. Nie zamykam systemu w licencji, z której nie ma wyjścia.",
+    "Rozwój po MVP jest osobnymi krokami, nie wieczną umową na wszystko. Możesz zatrzymać się po pierwszej wersji, zabrać kod i iść dalej sam albo ze mną. Nie zamykam systemu w licencji, z której nie ma wyjścia. Po starcie zostaje opieka po wdrożeniu.",
   ],
   close:
     "Jeśli arkusz, telefon i jedna osoba w głowie to dziś cały Twój system, napisz, jak wygląda dzień pracy. Od tego zaczynam wycenę, nie od listy technologii.",

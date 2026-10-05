@@ -20,7 +20,7 @@ export default function ProcessStepExpandable({
       </p>
       <h3 className={`${fraunces.className} mt-6 font-semibold`}>{title}</h3>
       {paragraphs.map((paragraph) => (
-        <p key={paragraph} className="body-copy mt-6 max-w-[40rem]">
+        <p key={paragraph} className="body-copy mt-6 mx-auto max-w-[70ch]">
           {paragraph}
         </p>
       ))}
