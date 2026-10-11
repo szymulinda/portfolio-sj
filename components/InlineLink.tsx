@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 
 export const inlineLinkClass =
-  "text-[var(--text)] underline decoration-[var(--line)] underline-offset-4 hover:text-[var(--accent)]";
+  "inline-link text-[var(--text)] underline-offset-4";
 
 export function InlineLink({
   href,

@@ -24,9 +24,13 @@ function CheckIcon() {
 
 export default function OfferPlanCard({ plan }: { plan: PricingPlan }) {
   return (
-    <article className="box-border min-w-0 rounded-[16px] border-8 border-[#f0edea] bg-[#fbf8f6] p-7">
+    <article
+      className={`offer-card box-border min-w-0 rounded-[16px] border-8 border-solid bg-[#fbf8f6] p-7 ${
+        plan.featured ? "offer-card-featured" : ""
+      }`}
+    >
       {plan.featured ? (
-        <p className="mb-3 inline-flex rounded-full bg-[var(--accent)] px-2.5 py-1 text-[11px] font-medium leading-none text-[var(--bg)]">
+        <p className="offer-card-badge mb-3 inline-flex rounded-full bg-[var(--accent)] px-2.5 py-1 text-[11px] font-medium leading-none text-[var(--bg)]">
           {pricing.featuredLabel}
         </p>
       ) : null}

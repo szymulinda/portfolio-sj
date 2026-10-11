@@ -13,11 +13,7 @@ export default function NavbarChrome({ children }: { children: ReactNode }) {
   }, []);
 
   return (
-    <header
-      className={`relative sticky top-0 z-30 border-b border-[var(--line)] ${
-        scrolled ? "bg-[var(--bg)]/85 backdrop-blur-md" : "bg-[var(--bg)]"
-      }`}
-    >
+    <header className={`site-header relative sticky top-0 z-30 ${scrolled ? "is-scrolled" : ""}`}>
       {children}
     </header>
   );

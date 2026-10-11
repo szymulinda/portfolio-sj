@@ -1,16 +1,21 @@
 import { fraunces } from "@/lib/fonts";
 import SectionShell from "@/components/SectionShell";
 import OfferPlanCard from "@/components/OfferPlanCard";
+import Reveal from "@/components/Reveal";
 import { InlineLink } from "@/components/InlineLink";
 import { pricing, pricingPlans } from "@/lib/content";
 
 export default function OfferSection() {
   return (
     <SectionShell id="cennik" label={pricing.label}>
-      <h2 className={fraunces.className}>{pricing.heading}</h2>
+      <Reveal>
+        <h2 className={fraunces.className}>{pricing.heading}</h2>
+      </Reveal>
       <div className="grid grid-cols-1 items-start gap-6 min-[1100px]:grid-cols-3">
-        {pricingPlans.map((plan) => (
-          <OfferPlanCard key={plan.name} plan={plan} />
+        {pricingPlans.map((plan, index) => (
+          <Reveal key={plan.name} index={index}>
+            <OfferPlanCard plan={plan} />
+          </Reveal>
         ))}
       </div>
       <div className="section-note mx-auto mt-12 flex max-w-[70ch] flex-col items-center gap-[10px] text-center">

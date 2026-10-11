@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { fraunces } from "@/lib/fonts";
 import SectionShell from "@/components/SectionShell";
+import Reveal from "@/components/Reveal";
 import { InlineLink } from "@/components/InlineLink";
 import Button from "@/components/Button";
 import { CALENDAR_URL, homeAbout } from "@/lib/content";
@@ -8,8 +9,10 @@ import { CALENDAR_URL, homeAbout } from "@/lib/content";
 export default function AboutSection() {
   return (
     <SectionShell id="o-mnie" label={homeAbout.label}>
-      <h2 className={fraunces.className}>{homeAbout.heading}</h2>
-      <div className="grid items-start gap-8 md:grid-cols-[280px_minmax(0,1fr)] md:gap-12">
+      <Reveal>
+        <h2 className={fraunces.className}>{homeAbout.heading}</h2>
+      </Reveal>
+      <Reveal className="grid items-start gap-8 md:grid-cols-[280px_minmax(0,1fr)] md:gap-12">
         <Image
           src="/szymon-portret.webp"
           alt="Szymon Jurkun, inżynier oprogramowania"
@@ -47,7 +50,7 @@ export default function AboutSection() {
             </p>
           </div>
         </div>
-      </div>
+      </Reveal>
     </SectionShell>
   );
 }

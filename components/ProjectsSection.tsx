@@ -1,18 +1,23 @@
 import { fraunces } from "@/lib/fonts";
 import SectionShell from "@/components/SectionShell";
 import ProjectCard from "@/components/ProjectCard";
+import Reveal from "@/components/Reveal";
 import { projectColumnOrder, projects } from "@/lib/content";
 import { InlineLink } from "@/components/InlineLink";
 
 export default function ProjectsSection() {
   return (
     <SectionShell id="projekty" label="Projekty">
-      <h2 className={fraunces.className}>Strony, które wspierają firmy moich klientów</h2>
+      <Reveal>
+        <h2 className={fraunces.className}>Strony, które wspierają firmy moich klientów</h2>
+      </Reveal>
       <div className="project-masonry">
-        {projectColumnOrder.map((slug) => {
+        {projectColumnOrder.map((slug, index) => {
           const project = projects.find((item) => item.slug === slug);
           return project ? (
-            <ProjectCard key={project.slug} project={project} variant="short" />
+            <Reveal key={project.slug} index={index}>
+              <ProjectCard project={project} variant="short" />
+            </Reveal>
           ) : null;
         })}
       </div>

@@ -17,11 +17,18 @@ export default function FaqItem({ children }: { children: ReactNode }) {
         onClick={() => setOpen((value) => !value)}
       >
         <span className="flex-1">{question}</span>
-        <span aria-hidden className="text-[var(--text-subtle)]">
-          {open ? "-" : "+"}
+        <span
+          aria-hidden
+          className={`faq-toggle-icon text-[var(--text-subtle)] ${open ? "is-open" : ""}`}
+        >
+          +
         </span>
       </button>
-      <div className={open ? "mt-6" : "hidden"}>{answer}</div>
+      <div className={`faq-answer ${open ? "is-open" : ""}`}>
+        <div className="faq-answer-inner">
+          <div className="mt-6">{answer}</div>
+        </div>
+      </div>
     </article>
   );
 }

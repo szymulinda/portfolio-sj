@@ -31,6 +31,11 @@ export const problem = {
 
 export type ProjectStatus = "Działa" | "Wdrożone" | "W budowie" | "MVP";
 
+export type ProjectImage = {
+  src: string;
+  alt: string;
+};
+
 export type Project = {
   slug: string;
   title: string;
@@ -44,8 +49,10 @@ export type Project = {
   problem: string[];
   solution: string[];
   effect?: string[];
-  image?: string;
-  imageAlt?: string;
+  /** Publiczny adres strony projektu. Brak pola = bez linku. */
+  url?: string;
+  icon?: string;
+  images: ProjectImage[];
   stack: string;
 };
 
@@ -109,25 +116,29 @@ export const projects: Project[] = [
       "To nie projekt w portfolio. To firma z klientami, którzy płacą co miesiąc. Rozumiem przez to koszt pozyskania, utrzymania i rezygnacji - i tak samo patrzę na stronę, którą Ci buduję: ma przynosić zapytania, nie tylko wyglądać.",
     ],
     stack: "Next.js, TypeScript, Voice AI, integracje telefoniczne, PostgreSQL.",
-    image: "/projects/callnest.webp",
-    imageAlt:
-      "Callnest - strona na laptopie z hasłem o nieprzeoczonych połączeniach",
+    url: "https://callnest.pl/",
+    icon: "/projekty/callnest/ikona.png",
+    images: [
+      {
+        src: "/projekty/callnest/01.webp",
+        alt: "Strona Callnest na laptopie z hasłem o nieprzeoczonych połączeniach",
+      },
+    ],
   },
   {
     slug: "glamour-kosmetik",
-    // Po zgodzie klienta przywróć: title: "Glamour Kosmetik"
-    title: "Salon kosmetyczny w Opolu",
+    title: "Glamour Kosmetik",
     category: "Beauty",
     headline:
       "Pierwsze miejsce w Google i 156 wejść w cztery miesiące dla salonu kosmetycznego",
     summary:
-      "Salon kosmetyczny w Opolu. Strona z galerią zabiegów, cennikiem i przejściem do rezerwacji, zbudowana pod telefon.",
-    full: "Salon prowadził całą sprzedaż przez Booksy i nie miał własnej obecności w Google. Zbudowałem stronę z galerią zabiegów, cennikiem i przejściem do rezerwacji, zaprojektowaną najpierw pod telefon - bo tak szuka większość klientek. Po czterech miesiącach strona zajmuje pierwsze miejsce w Google na nazwę salonu i pokazuje się w wynikach przy ponad dwudziestu różnych zabiegach.",
+      "Glamour Kosmetik. Strona z galerią zabiegów, cennikiem i przejściem do rezerwacji, zbudowana pod telefon.",
+    full: "Glamour Kosmetik prowadził całą sprzedaż przez Booksy i nie miał własnej obecności w Google. Zbudowałem stronę z galerią zabiegów, cennikiem i przejściem do rezerwacji, zaprojektowaną najpierw pod telefon - bo tak szuka większość klientek. Po czterech miesiącach strona zajmuje pierwsze miejsce w Google na nazwę salonu i pokazuje się w wynikach przy ponad dwudziestu różnych zabiegach.",
     results: ["1. miejsce na nazwę salonu", "3 753 wyświetlenia w Google", "81% ruchu z telefonu"],
     tags: ["Next.js", "Rezerwacje", "SEO lokalne"],
     status: "Wdrożone",
     problem: [
-      "Salon kosmetyczny w Opolu sprzedawał całość przez Booksy. W Google nie było własnej strony, więc ktoś szukający nazwy salonu lądował w katalogu albo u konkurencji.",
+      "Glamour Kosmetik sprzedawał całość przez Booksy. W Google nie było własnej strony, więc ktoś szukający nazwy salonu lądował w katalogu albo u konkurencji.",
     ],
     solution: [
       "Zbudowałem stronę z galerią zabiegów, cennikiem i przejściem do rezerwacji. Układ jest pod telefon, bo tam szuka większość klientek.",
@@ -136,9 +147,14 @@ export const projects: Project[] = [
       "Po czterech miesiącach: pierwsze miejsce w Google na nazwę salonu, 3 753 wyświetlenia w wynikach wyszukiwania, 156 wejść. 81% ruchu z telefonu.",
     ],
     stack: "Next.js · Rezerwacje · SEO lokalne",
-    image: "/projects/glamour.webp",
-    imageAlt:
-      "Salon kosmetyczny w Opolu - strona na telefonie z przyciskiem rezerwacji",
+    url: "https://glamourkosmetik.pl/",
+    icon: "/projekty/glamour-kosmetik/ikona.png",
+    images: [
+      {
+        src: "/projekty/glamour-kosmetik/01.webp",
+        alt: "Strona główna Glamour Kosmetik na telefonie z przyciskiem rezerwacji",
+      },
+    ],
   },
   {
     slug: "atb-bud",
@@ -157,9 +173,14 @@ export const projects: Project[] = [
       "Strona z galerią realizacji, opisem zakresu usług i formularzem kontaktowym. Zbudowana tak, żeby klient widział, co firma robi, zanim zadzwoni.",
     ],
     stack: "Next.js · Galeria realizacji · SEO lokalne",
-    image: "/projects/atb-bud.webp",
-    imageAlt:
-      "ATB Bud - strona na laptopie z hasłem modernizujemy, nadzorujemy, odpowiadamy",
+    url: "https://atb-bud.pl",
+    icon: "/projekty/atb-bud/ikona.png",
+    images: [
+      {
+        src: "/projekty/atb-bud/01.webp",
+        alt: "Strona ATB Bud na laptopie z hasłem modernizujemy, nadzorujemy, odpowiadamy",
+      },
+    ],
   },
   {
     slug: "mixmedix",
@@ -168,8 +189,8 @@ export const projects: Project[] = [
     headline:
       "Aplikacja mobilna analizująca bezpieczeństwo suplementacji na silniku reguł",
     summary:
-      "Aplikacja mobilna analizująca bezpieczeństwo suplementacji: dawki, interakcje, przeciwwskazania. Działa na jawnym silniku reguł z przypisanym źródłem dowodów, nie na zgadywaniu AI. Reguły akceptuje ekspertka z Gdańskiego Uniwersytetu Medycznego.",
-    full: "Aplikacja mobilna analizująca bezpieczeństwo suplementacji: dawki, interakcje między składnikami, przeciwwskazania zdrowotne. Działa na jawnym silniku reguł z przypisanym źródłem i poziomem dowodów, nie na generowaniu odpowiedzi przez model językowy - przy treściach dotyczących zdrowia to różnica między odpowiedzią, za którą ktoś odpowiada, a zgadywaniem. Reguły bezpieczeństwa akceptuje ekspertka z Gdańskiego Uniwersytetu Medycznego.",
+      "Aplikacja mobilna analizująca bezpieczeństwo suplementacji: dawki, interakcje, przeciwwskazania. Działa na jawnym silniku reguł z przypisanym źródłem dowodów, nie na zgadywaniu AI. Reguły akceptują doktorki z Gdańskiego Uniwersytetu Medycznego.",
+    full: "Aplikacja mobilna analizująca bezpieczeństwo suplementacji: dawki, interakcje między składnikami, przeciwwskazania zdrowotne. Działa na jawnym silniku reguł z przypisanym źródłem i poziomem dowodów, nie na generowaniu odpowiedzi przez model językowy - przy treściach dotyczących zdrowia to różnica między odpowiedzią, za którą ktoś odpowiada, a zgadywaniem. Reguły bezpieczeństwa akceptują doktorki z Gdańskiego Uniwersytetu Medycznego.",
     tags: ["React Native", "Silnik reguł", "PostgreSQL"],
     status: "W budowie",
     problem: [
@@ -177,20 +198,25 @@ export const projects: Project[] = [
       "Aplikacja, która radzi w zdrowiu, nie może chować decyzji w czarnej skrzynce. Gdy coś pójdzie nie tak, musi dać się sprawdzić, skąd wzięła się odpowiedź. Tego nie spełnia czat, który brzmi pewnie.",
     ],
     solution: [
-      "MiXmediX sprawdza dawki, interakcje i przeciwwskazania na jawnym silniku reguł. Każda decyzja ma przypisane źródło, a zestaw reguł akceptuje ekspertka z Gdańskiego Uniwersytetu Medycznego. Model językowy nie jest sędzią bezpieczeństwa.",
+      "MiXmediX sprawdza dawki, interakcje i przeciwwskazania na jawnym silniku reguł. Każda decyzja ma przypisane źródło, a zestaw reguł akceptują doktorki z Gdańskiego Uniwersytetu Medycznego. Model językowy nie jest sędzią bezpieczeństwa.",
       "Odpowiedzialność za treść medyczną zostaje przy regule i recenzji, nie przy promptcie. Jeśli reguła jest zła, da się ją poprawić i wskazać, kto ją przyjął. Jeśli model zmyśli, zostaje rozmowa, której nie da się rozliczyć.",
-      "Współpraca z ekspertką z GUMed jest warunkiem, nie ozdobą w stopce. Bez akceptacji zestawu reguł aplikacja nie idzie do ludzi. To spowalnia, i tak ma być.",
+      "Współpraca z doktorkami z GUMed jest warunkiem, nie ozdobą w stopce. Bez akceptacji zestawu reguł aplikacja nie idzie do ludzi. To spowalnia, i tak ma być.",
       "Nie publikuję poradnika żywieniowego pod marką aplikacji. Publikuję mechanizm, który da się zrecenzować. Różnica jest nudna dla marketingu i konieczna, gdy na drugiej stronie jest zdrowie człowieka.",
       "Aplikacja jest w budowie. Świadomie nie przyspieszam premiery kosztem nadzoru. Silnik i recenzja są ważniejsze niż data w sklepie.",
     ],
     stack: "React Native, TypeScript, PostgreSQL, silnik reguł z recenzją ekspercką.",
-    image: "/projects/mixmedix.webp",
-    imageAlt:
-      "MiXmediX - aplikacja na telefonie z wynikiem analizy suplementacji",
+    url: "https://mixmedixlabs.com/",
+    icon: "/projekty/mixmedix/ikona.png",
+    images: [
+      {
+        src: "/projekty/mixmedix/01.webp",
+        alt: "Aplikacja MiXmediX na telefonie z wynikiem analizy suplementacji",
+      },
+    ],
   },
 ];
 
-/** Kolumny czytają w dół: Callnest i salon zostają na górze obu kolumn. */
+/** Kolumny czytają w dół: Callnest i Glamour Kosmetik zostają na górze obu kolumn. */
 export const projectColumnOrder = [
   "callnest",
   "atb-bud",

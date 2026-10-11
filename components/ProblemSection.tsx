@@ -1,5 +1,6 @@
 import { fraunces } from "@/lib/fonts";
 import SectionShell from "@/components/SectionShell";
+import Reveal from "@/components/Reveal";
 import { InlineLink } from "@/components/InlineLink";
 import { problem } from "@/lib/content";
 
@@ -18,9 +19,11 @@ function processNote() {
 export default function ProblemSection() {
   return (
     <SectionShell id="dlaczego" label={problem.label}>
-      <h2 className={fraunces.className}>
-        {problem.heading} <em>{problem.headingAccent}</em>
-      </h2>
+      <Reveal>
+        <h2 className={fraunces.className}>
+          {problem.heading} <em>{problem.headingAccent}</em>
+        </h2>
+      </Reveal>
       <div className="problem-prose">
         {problem.paragraphs.map((paragraph, index) => {
           const note = index === problem.paragraphs.length - 1 ? processNote() : null;

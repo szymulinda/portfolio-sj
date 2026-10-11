@@ -1,4 +1,4 @@
-import { faqs, pricingPlans, site } from "@/lib/content";
+import { faqs, pricingPlans, projects, site } from "@/lib/content";
 
 export const SITE_URL = "https://szymonjurkun.pl";
 
@@ -122,5 +122,29 @@ export function serviceOffers(): JsonLd {
         priceCurrency: "PLN",
       })),
     },
+  };
+}
+
+export function portfolioProjects(): JsonLd {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Portfolio - projekty własne i wdrożenia",
+    itemListElement: projects.map((project, index) => {
+      const item: Record<string, unknown> = {
+        "@type": project.url ? "WebSite" : "CreativeWork",
+        name: project.title,
+        description: project.summary,
+      };
+      if (project.url) {
+        item.url = project.url;
+      }
+
+      return {
+        "@type": "ListItem",
+        position: index + 1,
+        item,
+      };
+    }),
   };
 }

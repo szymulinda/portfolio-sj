@@ -25,6 +25,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${fraunces.variable} ${ibmPlexSans.variable} h-full antialiased`}
     >
       <body className={`${ibmPlexSans.className} min-h-full bg-bg text-text`}>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `document.documentElement.classList.add("js");`,
+          }}
+        />
         <Navbar />
         {children}
         <Footer />

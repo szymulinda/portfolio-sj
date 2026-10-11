@@ -1,5 +1,6 @@
 import { fraunces } from "@/lib/fonts";
 import Button from "@/components/Button";
+import HeroAccent from "@/components/HeroAccent";
 import { hero, CALENDAR_URL } from "@/lib/content";
 
 export default function Hero() {
@@ -9,7 +10,7 @@ export default function Hero() {
         <h1 className={`${fraunces.className} max-w-[16ch] sm:max-w-[20ch]`}>
           {hero.line1}
           <br />
-          <em>{hero.accent}</em>
+          <HeroAccent>{hero.accent}</HeroAccent>
           {hero.line2rest}
         </h1>
         <p className="lead mt-6 max-w-[70ch]">{hero.support}</p>

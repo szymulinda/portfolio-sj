@@ -17,11 +17,8 @@ export default function NavLink({
   return (
     <Link
       href={href}
-      className={`inline-flex min-h-[44px] items-center text-[0.95rem] font-medium hover:text-[var(--accent)] ${
-        active
-          ? "text-[var(--text)] underline decoration-[var(--accent)] underline-offset-4"
-          : "text-[var(--text)]"
-      }`}
+      className="nav-link inline-flex min-h-[44px] items-center text-[0.95rem] font-medium text-[var(--text)] hover:text-[var(--accent)]"
+      aria-current={active ? "page" : undefined}
     >
       {children}
     </Link>
