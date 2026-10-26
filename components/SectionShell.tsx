@@ -8,7 +8,7 @@ type SectionShellProps = {
 
 export default function SectionShell({ id, label, children }: SectionShellProps) {
   return (
-    <section id={id} className="scroll-mt-24 py-[72px] md:py-[120px]">
+    <section id={id} className="scroll-mt-24 py-[40px] md:py-[64px]">
       <div className="page-wrap section-block">
         <p className="section-kicker">{label}</p>
         {children}

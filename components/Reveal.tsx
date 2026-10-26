@@ -1,13 +1,16 @@
 "use client";
 
-import { useEffect, useRef, type CSSProperties, type ReactNode } from "react";
+import { type ReactNode } from "react";
+import { motion, useReducedMotion } from "motion/react";
 
 type RevealProps = {
   children: ReactNode;
   className?: string;
-  /** Indeks kaskady (0-3), potem bez dodatkowego opóźnienia. */
+  /** Indeks kaskady (0-4), potem bez dodatkowego opóźnienia. */
   index?: number;
-  as?: "div" | "li" | "article" | "span";
+  as?: "div" | "li" | "article" | "span" | "section";
+  delay?: number;
+  y?: number;
 };
 
 export default function Reveal({
@@ -15,56 +18,32 @@ export default function Reveal({
   className = "",
   index = 0,
   as: Tag = "div",
+  delay,
+  y = 20,
 }: RevealProps) {
-  const ref = useRef<HTMLElement | null>(null);
-  const stagger = Math.min(Math.max(index, 0), 3);
+  const shouldReduceMotion = useReducedMotion();
+  const calculatedDelay = delay ?? Math.min(Math.max(index, 0), 4) * 0.08;
 
-  useEffect(() => {
-    const node = ref.current;
-    if (!node) return;
+  const MotionComponent = motion[Tag] as typeof motion.div;
+  const classes = `reveal ${className}`.trim();
 
-    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduced) {
-      node.classList.add("is-visible");
-      return;
-    }
-
-    let firstCallback = true;
-    let timeoutId = 0;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (!entry.isIntersecting) {
-          firstCallback = false;
-          return;
-        }
-
-        // Elementy widoczne juz przy starcie: krotkie opoznienie, zeby ruch dalo sie zauwazyc.
-        const delay = firstCallback ? 200 : 0;
-        firstCallback = false;
-
-        timeoutId = window.setTimeout(() => {
-          node.classList.add("is-visible");
-        }, delay);
-        observer.disconnect();
-      },
-      { threshold: 0.3, rootMargin: "0px 0px -18% 0px" },
-    );
-
-    observer.observe(node);
-    return () => {
-      observer.disconnect();
-      window.clearTimeout(timeoutId);
-    };
-  }, []);
+  if (shouldReduceMotion) {
+    return <Tag className={classes}>{children}</Tag>;
+  }
 
   return (
-    <Tag
-      ref={ref as never}
-      className={`reveal ${className}`.trim()}
-      style={{ "--i": stagger } as CSSProperties}
+    <MotionComponent
+      initial={{ opacity: 0, y }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "0px 0px -40px 0px" }}
+      transition={{
+        duration: 0.5,
+        delay: calculatedDelay,
+        ease: [0.22, 1, 0.36, 1],
+      }}
+      className={classes}
     >
       {children}
-    </Tag>
+    </MotionComponent>
   );
 }

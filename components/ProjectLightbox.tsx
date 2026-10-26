@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useId, useRef } from "react";
+import { motion, AnimatePresence } from "motion/react";
 import type { ProjectImage } from "@/lib/content";
 
 export default function ProjectLightbox({
@@ -56,14 +57,25 @@ export default function ProjectLightbox({
   if (!current) return null;
 
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
       className="project-lightbox"
       role="dialog"
       aria-modal="true"
       aria-labelledby={labelId}
       onClick={onClose}
     >
-      <div className="project-lightbox-panel" onClick={(event) => event.stopPropagation()}>
+      <motion.div
+        initial={{ opacity: 0, scale: 0.96 }}
+        animate={{ opacity: 1, scale: 1 }}
+        exit={{ opacity: 0, scale: 0.96 }}
+        transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+        className="project-lightbox-panel"
+        onClick={(event) => event.stopPropagation()}
+      >
         <p id={labelId} className="sr-only">
           {current.alt}
         </p>
@@ -71,14 +83,25 @@ export default function ProjectLightbox({
           Zamknij
         </button>
         <div className="relative mx-auto aspect-[4/3] w-full max-w-[960px] overflow-hidden rounded-[12px] bg-[#f2ede2]">
-          <Image
-            src={current.src}
-            alt={current.alt}
-            fill
-            className="object-contain"
-            sizes="(min-width: 960px) 960px, 100vw"
-            priority
-          />
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={current.src}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="absolute inset-0"
+            >
+              <Image
+                src={current.src}
+                alt={current.alt}
+                fill
+                className="object-contain"
+                sizes="(min-width: 960px) 960px, 100vw"
+                priority
+              />
+            </motion.div>
+          </AnimatePresence>
         </div>
         {images.length > 1 ? (
           <div className="mt-4 flex items-center justify-between gap-3">
@@ -101,7 +124,7 @@ export default function ProjectLightbox({
             </button>
           </div>
         ) : null}
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }

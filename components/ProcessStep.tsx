@@ -1,26 +1,26 @@
 import { fraunces } from "@/lib/fonts";
 import type { ProcessItem } from "@/lib/content";
-import type { CSSProperties } from "react";
 
 export default function ProcessStep({
   item,
-  last = false,
-  index = 0,
 }: {
   item: ProcessItem;
-  last?: boolean;
   index?: number;
+  last?: boolean;
 }) {
   return (
-    <article className={last ? "relative pb-0 pl-8" : "relative border-b border-[var(--line)] pb-12 pl-8"}>
-      <p
-        className={`${fraunces.className} process-step-num text-[clamp(1.9rem,3.5vw,2.75rem)] font-semibold leading-[1.1] tracking-[-0.015em] text-[var(--accent)]`}
-        style={{ "--i": index } as CSSProperties}
+    <article className="relative flex flex-col">
+      <span
+        className={`${fraunces.className} text-[clamp(2.2rem,3.5vw,3rem)] font-semibold leading-none text-[var(--accent)] select-none`}
       >
         {item.step}
+      </span>
+      <h3 className={`${fraunces.className} mt-4 text-[20px] font-semibold text-[var(--text)]`}>
+        {item.title}
+      </h3>
+      <p className="body-copy mt-3 text-[14.5px] leading-[1.6] text-[var(--text-muted)]">
+        {item.description}
       </p>
-      <h3 className={`${fraunces.className} mt-6 font-semibold`}>{item.title}</h3>
-      <p className="body-copy mt-6">{item.description}</p>
     </article>
   );
 }

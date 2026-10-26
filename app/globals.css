@@ -362,20 +362,6 @@ h2 em {
 
 /* --- Motion --- */
 
-.js .reveal {
-  opacity: 0;
-  transform: translateY(24px);
-}
-
-.js .reveal.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-  transition:
-    opacity var(--dur-base) var(--ease),
-    transform var(--dur-base) var(--ease);
-  transition-delay: calc(var(--i, 0) * 140ms);
-}
-
 .hero-accent {
   color: var(--accent);
 }
@@ -397,7 +383,7 @@ h2 em {
     -webkit-text-fill-color: transparent;
     box-decoration-break: clone;
     -webkit-box-decoration-break: clone;
-    transition: background-position var(--dur-slow) var(--ease) 900ms;
+    transition: background-position var(--dur-slow) var(--ease) 180ms;
   }
 
   html.js .hero-accent.is-lit {
@@ -474,27 +460,14 @@ h2 em {
 }
 
 .offer-card-featured {
-  border-color: #f0edea;
-}
-
-.js .offer-card-featured.is-visible,
-.js .reveal.is-visible .offer-card-featured {
   border-color: color-mix(in srgb, var(--accent) 55%, #f0edea);
+  box-shadow:
+    0 2px 4px rgba(138, 46, 42, 0.08),
+    0 16px 36px rgba(138, 46, 42, 0.14);
 }
 
 .offer-card-badge {
   opacity: 1;
-}
-
-.js .offer-card-featured .offer-card-badge {
-  opacity: 0;
-}
-
-.js .offer-card-featured.is-visible .offer-card-badge,
-.js .reveal.is-visible .offer-card-featured .offer-card-badge {
-  opacity: 1;
-  transition: opacity var(--dur-base) var(--ease);
-  transition-delay: 1300ms;
 }
 
 .project-card {
@@ -525,71 +498,7 @@ h2 em {
   transform: translateX(5px);
 }
 
-.project-lightbox {
-  animation: lightbox-fade 300ms var(--ease);
-}
 
-.project-lightbox-panel {
-  animation: lightbox-panel 300ms var(--ease);
-}
-
-@keyframes lightbox-fade {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes lightbox-panel {
-  from {
-    opacity: 0;
-    transform: scale(0.98);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-.process-track {
-  position: relative;
-}
-
-.process-line {
-  position: absolute;
-  left: 0.35rem;
-  top: 0.5rem;
-  bottom: 0.5rem;
-  width: 2px;
-  background: color-mix(in srgb, var(--accent) 35%, transparent);
-  transform: scaleY(0);
-  transform-origin: top;
-}
-
-.js .process-track.is-visible .process-line {
-  transform: scaleY(1);
-  transition: transform var(--dur-slow) var(--ease);
-}
-
-.process-step-num {
-  opacity: 1;
-}
-
-.js .process-track:not(.is-visible) .process-step-num {
-  opacity: 0;
-  transform: translateY(8px);
-}
-
-.js .process-track.is-visible .process-step-num {
-  opacity: 1;
-  transform: translateY(0);
-  transition:
-    opacity var(--dur-base) var(--ease),
-    transform var(--dur-base) var(--ease);
-  transition-delay: calc(var(--i, 0) * 250ms);
-}
 
 .faq-answer {
   display: grid;
@@ -696,29 +605,6 @@ h2 em {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .js .reveal,
-  .js .reveal.is-visible,
-  .js .process-track:not(.is-visible) .process-step-num,
-  .js .process-track.is-visible .process-step-num,
-  .js .offer-card-featured .offer-card-badge,
-  .js .offer-card-featured.is-visible .offer-card-badge,
-  .js .reveal.is-visible .offer-card-featured .offer-card-badge {
-    opacity: 1;
-    transform: none;
-    transition: none;
-  }
-
-  .js .offer-card-featured.is-visible .offer-card-badge,
-  .js .reveal.is-visible .offer-card-featured .offer-card-badge {
-    transition-delay: 0ms;
-  }
-
-  .js .process-line,
-  .js .process-track.is-visible .process-line {
-    transform: scaleY(1);
-    transition: none;
-  }
-
   .btn-primary,
   .btn-primary .btn-arrow,
   .btn-secondary::after,

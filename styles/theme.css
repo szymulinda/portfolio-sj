@@ -10,9 +10,9 @@
   --line: rgba(26, 26, 23, 0.14);
   --line-strong: rgba(26, 26, 23, 0.28);
 
-  /* Motion tokens - zmieniaj tylko tutaj */
+  /* Motion tokens - responsywne i precyzyjne */
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
-  --dur-fast: 300ms;
-  --dur-base: 900ms;
-  --dur-slow: 1200ms;
+  --dur-fast: 180ms;
+  --dur-base: 360ms;
+  --dur-slow: 550ms;
 }

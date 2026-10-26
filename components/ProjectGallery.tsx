@@ -2,6 +2,7 @@
 
 import dynamic from "next/dynamic";
 import { useState } from "react";
+import { AnimatePresence } from "motion/react";
 import type { ProjectImage } from "@/lib/content";
 import ProjectCoverImage from "@/components/ProjectCoverImage";
 
@@ -25,14 +26,17 @@ export default function ProjectGallery({
         priorityFirst={priorityFirst}
         onOpen={setOpenIndex}
       />
-      {openIndex !== null ? (
-        <ProjectLightbox
-          images={images}
-          openIndex={openIndex}
-          onClose={() => setOpenIndex(null)}
-          onChange={setOpenIndex}
-        />
-      ) : null}
+      <AnimatePresence>
+        {openIndex !== null && (
+          <ProjectLightbox
+            key="lightbox"
+            images={images}
+            openIndex={openIndex}
+            onClose={() => setOpenIndex(null)}
+            onChange={setOpenIndex}
+          />
+        )}
+      </AnimatePresence>
     </>
   );
 }
