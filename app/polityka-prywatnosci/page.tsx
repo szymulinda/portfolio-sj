@@ -24,7 +24,11 @@ export default function Page() {
         </p>
 
         {polityka.sections.map((section) => (
-          <section key={section.heading} className="mx-auto mt-16 max-w-[70ch]">
+          <section
+            key={section.heading}
+            id={section.id}
+            className="mx-auto mt-16 max-w-[70ch] scroll-mt-24"
+          >
             <h2 className={fraunces.className}>{section.heading}</h2>
             {section.paragraphs.map((paragraph) => (
               <p key={paragraph} className="body-copy mt-6 mx-auto max-w-[70ch]">
